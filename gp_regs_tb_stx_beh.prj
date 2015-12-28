@@ -1,0 +1,4 @@
+vhdl isim_temp "reg_4x8.vhd"
+vhdl isim_temp "dec_1_to_8.vhd"
+vhdl isim_temp "Universal_registers.vhd"
+vhdl isim_temp "gp_regs_tb.vhd"

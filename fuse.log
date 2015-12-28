@@ -1,0 +1,40 @@
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/CPU_tb_isim_beh.exe" -prj "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/CPU_tb_beh.prj" "work.CPU_tb" 
+ISim P.20131013 (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/ALU_op_decoder.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/reg_1bit_CE.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/mux_2x1.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/instruction_decoder.vhd" into library work
+WARNING:HDLCompiler:946 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/instruction_decoder.vhd" Line 66: Actual for formal port enable is neither a static name nor a globally static expression
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/gp_registerss.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/ALU.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/CPU.vhd" into library work
+WARNING:HDLCompiler:946 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/CPU.vhd" Line 157: Actual for formal port not_enable is neither a static name nor a globally static expression
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/CPU_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 121196 KB
+Fuse CPU Usage: 779 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package textio
+Compiling package std_logic_textio
+Compiling package numeric_std
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture mux_a of entity mux_2x8 [mux_2x8_default]
+Compiling architecture reg_8bit_ce_a of entity reg_8bit_CE [reg_8bit_ce_default]
+Compiling architecture alu_o_d_a of entity ALU_op_decoder [alu_op_decoder_default]
+Compiling architecture idec_a of entity instruction_decoder [instruction_decoder_default]
+Compiling architecture gpr_a of entity gp_registerss [gp_registerss_default]
+Compiling architecture alu_a of entity ALU [alu_default]
+Compiling architecture cpu_a of entity CPU [cpu_default]
+Compiling architecture behavior of entity cpu_tb
+Time Resolution for simulation is 1ps.
+Waiting for 6 sub-compilation(s) to finish...
+Compiled 22 VHDL Units
+Built simulation executable C:/Users/Piotr/workspace/vlsi/vlsi_mcu/CPU_tb_isim_beh.exe
+Fuse Memory Usage: 145436 KB
+Fuse CPU Usage: 1762 ms

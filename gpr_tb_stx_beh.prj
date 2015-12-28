@@ -1,0 +1,2 @@
+vhdl isim_temp "gp_registerss.vhd"
+vhdl isim_temp "gpr_tb.vhd"

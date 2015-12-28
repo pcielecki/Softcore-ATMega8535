@@ -1,0 +1,8 @@
+vhdl work "ALU_op_decoder.vhd"
+vhdl work "reg_1bit_CE.vhd"
+vhdl work "mux_2x1.vhd"
+vhdl work "instruction_decoder.vhd"
+vhdl work "gp_registerss.vhd"
+vhdl work "ALU.vhd"
+vhdl work "CPU.vhd"
+vhdl work "CPU_tb.vhd"
