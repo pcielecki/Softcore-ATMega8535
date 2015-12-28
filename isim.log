@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Users\Piotr\workspace\vlsi\vlsi_mcu\CPU_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Piotr/workspace/vlsi/vlsi_mcu/CPU_tb_isim_beh.wdb 
+Running: C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\CPU_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU_tb_isim_beh.wdb 
 ISim P.20131013 (signature 0x8ef4fb42)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -11,242 +11,20 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-
-** Failure:Assertion violation
-User(VHDL) Code Called Simulation Stop
-In process CPU_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-Finished circuit initialization process.
 at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-
-** Failure:Assertion violation
-User(VHDL) Code Called Simulation Stop
-In process CPU_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-Finished circuit initialization process.
 at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-
-** Failure:Assertion violation
-User(VHDL) Code Called Simulation Stop
-In process CPU_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-Finished circuit initialization process.
-at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-
-** Failure:Assertion violation
-User(VHDL) Code Called Simulation Stop
-In process CPU_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-Finished circuit initialization process.
-at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-
-** Failure:Assertion violation
-User(VHDL) Code Called Simulation Stop
-In process CPU_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-Finished circuit initialization process.
-at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-
-** Failure:Assertion violation
-User(VHDL) Code Called Simulation Stop
-In process CPU_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-Finished circuit initialization process.
-at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-
-** Failure:Assertion violation
-User(VHDL) Code Called Simulation Stop
-In process CPU_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-Finished circuit initialization process.
-at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-
-** Failure:Assertion violation
-User(VHDL) Code Called Simulation Stop
-In process CPU_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-Finished circuit initialization process.
-at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-
-** Failure:Assertion violation
-User(VHDL) Code Called Simulation Stop
-In process CPU_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-Finished circuit initialization process.
-at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
@@ -274,12 +52,7 @@ at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: 
 at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 55 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
@@ -307,12 +80,63 @@ at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: 
 at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+Finished circuit initialization process.
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 55 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+Finished circuit initialization process.
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
@@ -369,6 +193,618 @@ at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: 
 at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 55 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+Finished circuit initialization process.
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+Finished circuit initialization process.
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+Finished circuit initialization process.
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+Finished circuit initialization process.
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+Finished circuit initialization process.
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 75 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+Finished circuit initialization process.
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 75 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+Finished circuit initialization process.
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 75 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+Finished circuit initialization process.
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 15 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 75 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# show driver /cpu_tb/uut/AVR_gpreg/data_bus
+Driver for /cpu_tb/uut/AVR_gpreg/data_bus[0]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/AVR_gpreg/data_bus[1]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/AVR_gpreg/data_bus[2]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/AVR_gpreg/data_bus[3]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/AVR_gpreg/data_bus[4]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/AVR_gpreg/data_bus[5]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/AVR_gpreg/data_bus[6]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/AVR_gpreg/data_bus[7]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 25 ns(1), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 45 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# show driver /cpu_tb/uut/ALU_acc/q
+Driver for /cpu_tb/uut/ALU_acc/q[0]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/ALU_acc/q[1]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/ALU_acc/q[2]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/ALU_acc/q[3]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/ALU_acc/q[4]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/ALU_acc/q[5]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/ALU_acc/q[6]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+Driver for /cpu_tb/uut/ALU_acc/q[7]
+	'X'	: /cpu_tb/uut/ALU_acc/:rejestr
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" Line 44
+
+	'Z'	: /cpu_tb/uut/AVR_Idec/:Idec
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" Line 68
+
+	'Z'	: /cpu_tb/uut/AVR_gpreg/:regs
+		  in File "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" Line 57
+
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 75 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(2), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process CPU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 35 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 55 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 65 ns(2), Instance /cpu_tb/uut/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 85 ns(3), Instance /cpu_tb/uut/AVR_ALU/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop

@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/ALU.vhd";
+static const char *ng0 = "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/ALU.vhd";
 extern char *IEEE_P_3620187407;
 extern char *IEEE_P_2592010699;
 
@@ -159,10 +159,10 @@ LAB8:    t37 = (t0 + 868U);
 LAB12:
 LAB15:    t56 = (t0 + 592U);
     t57 = *((char **)t56);
-    t56 = (t0 + 3920U);
+    t56 = (t0 + 4036U);
     t58 = (t0 + 684U);
     t59 = *((char **)t58);
-    t58 = (t0 + 3936U);
+    t58 = (t0 + 4052U);
     t60 = ieee_p_2592010699_sub_1735675855_503743352(IEEE_P_2592010699, t55, t57, t56, t59, t58);
     t61 = (t55 + 12U);
     t62 = *((unsigned int *)t61);
@@ -185,10 +185,10 @@ LAB2:    t70 = (t0 + 2328);
 LAB1:    return;
 LAB3:    t1 = (t0 + 592U);
     t6 = *((char **)t1);
-    t1 = (t0 + 3920U);
+    t1 = (t0 + 4036U);
     t7 = (t0 + 684U);
     t8 = *((char **)t7);
-    t7 = (t0 + 3936U);
+    t7 = (t0 + 4052U);
     t9 = ieee_p_3620187407_sub_767668596_3965413181(IEEE_P_3620187407, t5, t6, t1, t8, t7);
     t10 = (t5 + 12U);
     t11 = *((unsigned int *)t10);
@@ -211,10 +211,10 @@ LAB5:    xsi_size_not_matching(8U, t12, 0);
 
 LAB7:    t19 = (t0 + 592U);
     t24 = *((char **)t19);
-    t19 = (t0 + 3920U);
+    t19 = (t0 + 4036U);
     t25 = (t0 + 684U);
     t26 = *((char **)t25);
-    t25 = (t0 + 3936U);
+    t25 = (t0 + 4052U);
     t27 = ieee_p_3620187407_sub_767740470_3965413181(IEEE_P_3620187407, t23, t24, t19, t26, t25);
     t28 = (t23 + 12U);
     t29 = *((unsigned int *)t28);
@@ -237,10 +237,10 @@ LAB9:    xsi_size_not_matching(8U, t30, 0);
 
 LAB11:    t37 = (t0 + 592U);
     t42 = *((char **)t37);
-    t37 = (t0 + 3920U);
+    t37 = (t0 + 4036U);
     t43 = (t0 + 684U);
     t44 = *((char **)t43);
-    t43 = (t0 + 3936U);
+    t43 = (t0 + 4052U);
     t45 = ieee_p_2592010699_sub_795620321_503743352(IEEE_P_2592010699, t41, t42, t37, t44, t43);
     t46 = (t41 + 12U);
     t47 = *((unsigned int *)t46);

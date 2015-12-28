@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/ALU_op_decoder.vhd";
+static const char *ng0 = "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/ALU_op_decoder.vhd";
 
 
 
@@ -147,7 +147,7 @@ LAB5:    xsi_set_current_line(50, ng0);
     xsi_set_current_line(52, ng0);
     t1 = (t0 + 776U);
     t2 = *((char **)t1);
-    t1 = (t0 + 3787);
+    t1 = (t0 + 3887);
     t3 = 1;
     if (4U == 4U)
         goto LAB16;
@@ -163,7 +163,7 @@ LAB15:    t1 = (t0 + 776U);
     t19 = (t16 * 1U);
     t20 = (0 + t19);
     t1 = (t2 + t20);
-    t5 = (t0 + 3791);
+    t5 = (t0 + 3891);
     t3 = 1;
     if (2U == 2U)
         goto LAB24;
@@ -179,7 +179,7 @@ LAB23:    t1 = (t0 + 776U);
     t19 = (t16 * 1U);
     t20 = (0 + t19);
     t1 = (t2 + t20);
-    t5 = (t0 + 3793);
+    t5 = (t0 + 3893);
     t3 = 1;
     if (2U == 2U)
         goto LAB32;
