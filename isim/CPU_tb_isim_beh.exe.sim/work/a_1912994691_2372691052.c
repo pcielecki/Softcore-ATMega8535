@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU_tb.vhd";
+static const char *ng0 = "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/CPU_tb.vhd";
 extern char *STD_TEXTIO;
 extern char *IEEE_P_3564397177;
 
@@ -135,7 +135,7 @@ LAB6:    *((char **)t1) = &&LAB7;
 
 LAB1:    return;
 LAB4:    xsi_set_current_line(104, ng0);
-    t2 = (t0 + 5604);
+    t2 = (t0 + 5432);
     t4 = (t0 + 2720);
     t7 = (t4 + 32U);
     t8 = *((char **)t7);
@@ -170,7 +170,7 @@ LAB8:    xsi_set_current_line(107, ng0);
     t2 = (t0 + 1224U);
     t3 = *((char **)t2);
     t5 = *((int64 *)t3);
-    t6 = (2 * t5);
+    t6 = (1 * t5);
     t2 = (t0 + 2200);
     xsi_process_wait(t2, t6);
 
@@ -182,7 +182,7 @@ LAB9:    goto LAB8;
 LAB11:    goto LAB9;
 
 LAB12:    xsi_set_current_line(110, ng0);
-    t2 = (t0 + 5620);
+    t2 = (t0 + 5448);
     t4 = (t0 + 2720);
     t7 = (t4 + 32U);
     t8 = *((char **)t7);
@@ -194,7 +194,7 @@ LAB12:    xsi_set_current_line(110, ng0);
     t2 = (t0 + 1224U);
     t3 = *((char **)t2);
     t5 = *((int64 *)t3);
-    t6 = (2 * t5);
+    t6 = (1 * t5);
     t2 = (t0 + 2200);
     xsi_process_wait(t2, t6);
 
@@ -206,7 +206,7 @@ LAB13:    goto LAB12;
 LAB15:    goto LAB13;
 
 LAB16:    xsi_set_current_line(113, ng0);
-    t2 = (t0 + 5636);
+    t2 = (t0 + 5464);
     t4 = (t0 + 2720);
     t7 = (t4 + 32U);
     t8 = *((char **)t7);
@@ -218,7 +218,7 @@ LAB16:    xsi_set_current_line(113, ng0);
     t2 = (t0 + 1224U);
     t3 = *((char **)t2);
     t5 = *((int64 *)t3);
-    t6 = (2 * t5);
+    t6 = (1 * t5);
     t2 = (t0 + 2200);
     xsi_process_wait(t2, t6);
 
@@ -230,7 +230,7 @@ LAB17:    goto LAB16;
 LAB19:    goto LAB17;
 
 LAB20:    xsi_set_current_line(116, ng0);
-    t2 = (t0 + 5652);
+    t2 = (t0 + 5480);
     t4 = (t0 + 2720);
     t7 = (t4 + 32U);
     t8 = *((char **)t7);
@@ -242,7 +242,7 @@ LAB20:    xsi_set_current_line(116, ng0);
     t2 = (t0 + 1224U);
     t3 = *((char **)t2);
     t5 = *((int64 *)t3);
-    t6 = (2 * t5);
+    t6 = (1 * t5);
     t2 = (t0 + 2200);
     xsi_process_wait(t2, t6);
 
@@ -263,7 +263,7 @@ LAB25:    goto LAB24;
 
 LAB27:    goto LAB25;
 
-LAB28:    t2 = (t0 + 5668);
+LAB28:    t2 = (t0 + 5496);
     xsi_report(t2, 19U, (unsigned char)3);
     goto LAB29;
 
@@ -310,9 +310,9 @@ LAB2:    xsi_set_current_line(133, ng0);
     t6 = (t0 + 1788U);
     std_textio_readline(STD_TEXTIO, t1, t5, t6);
     xsi_set_current_line(134, ng0);
-    t1 = (t0 + 5688);
+    t1 = (t0 + 5516);
     *((int *)t1) = 4;
-    t2 = (t0 + 5692);
+    t2 = (t0 + 5520);
     *((int *)t2) = 1;
     t7 = 4;
     t8 = 1;
@@ -334,19 +334,19 @@ LAB6:    xsi_set_current_line(136, ng0);
     t6 = (t0 + 1788U);
     t9 = (t0 + 1428U);
     t10 = *((char **)t9);
-    t9 = (t0 + 5336U);
+    t9 = (t0 + 5164U);
     ieee_p_3564397177_sub_3988856810_91900896(IEEE_P_3564397177, t5, t6, t10, t9);
     xsi_set_current_line(137, ng0);
     t1 = (t0 + 1428U);
     t2 = *((char **)t1);
     t1 = (t0 + 1496U);
     t5 = *((char **)t1);
-    t1 = (t0 + 5688);
+    t1 = (t0 + 5516);
     t11 = *((int *)t1);
     t12 = (4 * t11);
     t13 = (t12 - 1);
     t14 = (15 - t13);
-    t6 = (t0 + 5688);
+    t6 = (t0 + 5516);
     t15 = *((int *)t6);
     t16 = (4 * t15);
     t17 = (t16 - 4);
@@ -356,16 +356,16 @@ LAB6:    xsi_set_current_line(136, ng0);
     t9 = (t5 + t19);
     memcpy(t9, t2, 4U);
 
-LAB7:    t1 = (t0 + 5688);
+LAB7:    t1 = (t0 + 5516);
     t7 = *((int *)t1);
-    t2 = (t0 + 5692);
+    t2 = (t0 + 5520);
     t8 = *((int *)t2);
     if (t7 == t8)
         goto LAB8;
 
 LAB9:    t11 = (t7 + -1);
     t7 = t11;
-    t5 = (t0 + 5688);
+    t5 = (t0 + 5516);
     *((int *)t5) = t7;
     goto LAB5;
 

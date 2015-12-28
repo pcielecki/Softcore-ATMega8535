@@ -98,8 +98,7 @@ architecture CPU_a of CPU is
            clk : in  STD_LOGIC;
            D : in  STD_LOGIC_VECTOR (7 downto 0);
            Enable : in  STD_LOGIC;
-           Q : out  STD_LOGIC_VECTOR (7 downto 0);
-			  Write_Enable : out std_logic);
+           Q : out  STD_LOGIC_VECTOR (7 downto 0));
 	end component reg_8bit_CE;
 	
 	--signal CPU_rst : std_logic;
@@ -126,7 +125,7 @@ architecture CPU_a of CPU is
 begin
 	ALU_mux : mux_2x8 port map(A => Data2_async, B => immediate, sel => Immediate_not_Reg, Q => Rr_ALU);
 	
-	ALU_acc : reg_8bit_CE port map(rst => CPU_rst, clk => CPU_clk, D => ALU_result, Enable => Enable_ALU, Q => CPU_Data_bus, Write_Enable => CPU_Write_Enable);
+	ALU_acc : reg_8bit_CE port map(rst => CPU_rst, clk => CPU_clk, D => ALU_result, Enable => Enable_ALU, Q => CPU_Data_bus);
 	
 
 	
