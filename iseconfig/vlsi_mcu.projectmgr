@@ -8,16 +8,17 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/CPU - CPU_a C:|Users|Piotr|workspace|vlsi|vlsi_mcu|CPU.vhd/AVR_Idec - instruction_decoder - Idec_a</ClosedNode>
+         <ClosedNode>/CPU - CPU_a C:|Users|Piotr|workspace|vlsi|vlsi_mcu|VLSI_MCU|CPU.vhd/AVR_Idec - instruction_decoder - Idec_a</ClosedNode>
          <ClosedNode>/instruction_decoder - Idec_a C:|Users|Piotr|workspace|vlsi|vlsi_mcu|instruction_decoder.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>ALU_mux - mux_2x8 - mux_a (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/mux_2x1.vhd)</SelectedItem>
+         <SelectedItem>CPU - CPU_a (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001b2000000020000000000000000000000000200000064ffffffff000000810000000300000002000001b20000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>ALU_mux - mux_2x8 - mux_a (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/mux_2x1.vhd)</CurrentItem>
+      <CurrentItem>CPU - CPU_a (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -70,7 +71,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e7000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e70000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -82,13 +83,13 @@
          <ClosedNode>/reg_4x8_test - behavior C:|Users|Piotr|workspace|vlsi|vlsi_mcu|reg_4x8_test.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>CPU_tb - behavior (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/CPU_tb.vhd)</SelectedItem>
+         <SelectedItem>uut - CPU - CPU_a (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001ca000000020000000000000000000000000200000064ffffffff000000810000000300000002000001ca0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001c6000000020000000000000000000000000200000064ffffffff000000810000000300000002000001c60000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>CPU_tb - behavior (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/CPU_tb.vhd)</CurrentItem>
+      <CurrentItem>uut - CPU - CPU_a (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -96,13 +97,13 @@
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>

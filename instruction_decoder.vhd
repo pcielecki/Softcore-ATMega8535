@@ -49,72 +49,44 @@ entity instruction_decoder is
 end instruction_decoder;
 
 architecture Idec_a of instruction_decoder is
-
-	component ALU_op_decoder is
-    Port ( 
-			  rst : in std_logic;
-			  clk : in std_logic;
-			  coded_in : in  STD_LOGIC_VECTOR (3 downto 0);
-           op_add : out  STD_LOGIC;
-           op_sub : out  STD_LOGIC;
-           op_and : out  STD_LOGIC;
-           op_or : out  STD_LOGIC;
-			  enable : in std_logic);
-	end component ALU_op_decoder;
-	
-	signal alu_instr : std_logic_vector(3 downto 0);
-	signal alu_EN : std_logic;
+type STATE is (IDLE, 
+					ALU_INSTR_C1_IM, ALU_INSTR_C2, ALU_INSTR_C3, 
+					MEM_INSTR_C1,
+					COMMMON_C1, COMMON_C2);
+	signal idec_state : states := IDLE;
 begin
-	--signal s_enable_ALU : std_logic;
-	alu_dec : ALU_op_decoder port map(rst => rst, clk => clk, coded_in => alu_instr, op_add => op_add, op_sub => op_sub, op_and => op_and, op_or => op_or, enable => alu_EN);
-
-	Idec : process(clk, rst) is
+	idec_transitions: process(clk, rst) is
 	begin
-		if(rst = '0') then ALU_Not_mem <= '0';
-		
+		if(rst = '0') then idec_state <= IDLE;
 		elsif(clk'event and clk = '1') then
-			--Data_bus <= (others => 'Z');
-			--Address_bus <= (others => 'Z');
-			--immediate <= (others => 'Z');
-			manipulate_PC <= '0';
-			--immediate_not_reg <= '0';
-			--Write_Enable <= 'L';
-			--ALU_Not_mem <= '0';
-			if(instr_coded = "1111111111111111") then Write_Enable <= '0';
-			
-			elsif(instr_coded(15) = '1') then -- not activate ALU
-				alu_EN <= '0';
-				if(instr_coded(13) = '1') then --not manipulate PC
-					--immediate_not_reg <= '1';
-					Write_Enable <= '1';
-					Address_bus <= "000000000001" & instr_coded(7 downto 4);
-					Data_bus <= instr_coded(11 downto 8) & instr_coded(3 downto 0);
+			if(idec_state = IDLE) then
+				if(instr_coded(15) = '0') then 	idec_state <= ALU_INSTR_C1;
+				else										idec_state <= MEM_INSTR_C1;
 				end if;
-
 			else
-				alu_EN <= '1';
-				Write_Enable <= 'L';
-				alu_instr <= instr_coded(13 downto 10);
-				Data_bus <= (others => 'Z');
-				
-				if(instr_coded(14) = '0') then --ALU operation btw. 2 regs	
-					reg1 <= instr_coded(8 downto 4);				
-					reg2 <= instr_coded(9) & instr_coded(3 downto 0);
-					immediate <= (others => 'Z');
-					Immediate_Not_reg <= '0';
-					Address_bus <= "00000000000" & instr_coded(8 downto 4);
-
-				else -- operation with immediate
-					reg1 <= '1' & instr_coded(7 downto 4);
-					reg2 <= (others => 'Z');
-					immediate <= instr_coded(11 downto 8) & instr_coded(3 downto 0);
-					Immediate_Not_reg <= '1';
-					Address_bus <= "000000000001" & instr_coded(7 downto 4);
-				end if;
+			case idec_state is
+				when ALU_INSTR_C1 => 				idec_state <= ALU_INSTR_C2;
+				when ALU_INSTR_C2 => 				idec_state <= ALU_INSTR_C3;
+				when ALU_INSTR_C3 => 				idec_state <= COMMON_C1;	
+				when MEM_INSTR_C1 => 				idec_state <= COMMON_C1;
+				when COMMON_C1		=>					idec_state <= COMMON_C2;
+				when COMMON_C2		=>					idec_state <= IDLE;
+			end case;
 			end if;
-			ALU_Not_mem <= alu_EN;
 		end if;
-	end process Idec;
+	end process idec_transitions;
+
+	idec_outs : process(clk,rst) is
+	begin
+		if(clk'event and clk = '1') then
+			case idec_state is
+					when ALU_INSTR_C1 => 						reg1 <= instr_coded(8 downto 4);				
+																		reg2 <= instr_coded(9) & instr_coded(3 downto 0);		
+																		
+					
+			end case;
+		end if;
+	end process idec_outs;
 
 end Idec_a;
 
