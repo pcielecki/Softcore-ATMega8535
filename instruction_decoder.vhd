@@ -75,7 +75,7 @@ begin
 			immediate <= (others => 'Z');
 			manipulate_PC <= '0';
 			immediate_not_reg <= '0';
-			Write_Enable <= 'L';
+			Write_Enable <= '1';
 			ALU_Not_mem <= '0';
 			
 			if(instr_coded(15) = '1') then -- not activate ALU
@@ -89,7 +89,7 @@ begin
 
 			else
 				ALU_Not_mem <= '1';
-				--Write_Enable <= '0';
+				Write_Enable <= '1';
 				
 				
 				if(instr_coded(14) = '0') then --ALU operation btw. 2 regs	

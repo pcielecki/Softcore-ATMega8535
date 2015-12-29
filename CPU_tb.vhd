@@ -99,22 +99,22 @@ BEGIN
    stim_proc: process
    begin		
 		request_read := TRUE;
-		wait for 1*clk_period;
+	
+		wait for 1.2*clk_period;
 		
+		rst <= '1';
 		instruction <= "1110101000001010"; --LDI R16, 0b10101010
 		wait for 1*clk_period;
 		
-		rst <= '1';
-		wait for 2*clk_period;
 		
 		instruction <= "1110000000010010"; --LDI R17, 0b00000010
-		wait for 2*clk_period;
+		wait for 1*clk_period;
 		
-				instruction <= "0111110000011100";	--ANDI R17, 0b11001100
-		wait for 2*clk_period;
+				instruction <= "0111110000011111";	--ANDI R17, 0b11001100
+		wait for 1*clk_period;
 		
 		instruction <= "0000111100000001";	--ADD R16, R17
-		wait for 2*clk_period;
+		wait for 1*clk_period;
 		
 
 
