@@ -61,26 +61,29 @@ architecture Idec_a of instruction_decoder is
            op_or : out  STD_LOGIC;
 			  enable : in std_logic);
 	end component ALU_op_decoder;
+	
+	signal alu_instr : std_logic_vector(3 downto 0);
+	signal alu_EN : std_logic;
 begin
-
-	alu_dec : ALU_op_decoder port map(rst => rst, clk => clk, coded_in => instr_coded(13 downto 10), op_add => op_add, op_sub => op_sub, op_and => op_and, op_or => op_or, enable => not instr_coded(15));
+	--signal s_enable_ALU : std_logic;
+	alu_dec : ALU_op_decoder port map(rst => rst, clk => clk, coded_in => alu_instr, op_add => op_add, op_sub => op_sub, op_and => op_and, op_or => op_or, enable => alu_EN);
 
 	Idec : process(clk, rst) is
 	begin
 		if(rst = '0') then ALU_Not_mem <= '0';
 		
 		elsif(clk'event and clk = '1') then
-			Data_bus <= (others => 'Z');
-			Address_bus <= (others => 'Z');
-			immediate <= (others => 'Z');
+			--Data_bus <= (others => 'Z');
+			--Address_bus <= (others => 'Z');
+			--immediate <= (others => 'Z');
 			manipulate_PC <= '0';
-			immediate_not_reg <= '0';
-			Write_Enable <= '1';
-			ALU_Not_mem <= '0';
-			if(instr_coded = "0000000000000000") then Write_Enable <= '1';
+			--immediate_not_reg <= '0';
+			--Write_Enable <= 'L';
+			--ALU_Not_mem <= '0';
+			if(instr_coded = "1111111111111111") then Write_Enable <= '0';
 			
 			elsif(instr_coded(15) = '1') then -- not activate ALU
-				ALU_Not_mem <= '0';
+				alu_EN <= '0';
 				if(instr_coded(13) = '1') then --not manipulate PC
 					immediate_not_reg <= '1';
 					Write_Enable <= '1';
@@ -89,14 +92,15 @@ begin
 				end if;
 
 			else
-				ALU_Not_mem <= '1';
+				alu_EN <= '1';
 				Write_Enable <= '1';
-				
+				alu_instr <= instr_coded(13 downto 10);
 				
 				if(instr_coded(14) = '0') then --ALU operation btw. 2 regs	
 					reg1 <= instr_coded(8 downto 4);				
 					reg2 <= instr_coded(9) & instr_coded(3 downto 0);
 					immediate <= (others => 'Z');
+					Immediate_Not_reg <= '0';
 					Address_bus <= "00000000000" & instr_coded(8 downto 4);
 
 				else -- operation with immediate
@@ -107,6 +111,7 @@ begin
 					Address_bus <= "000000000001" & instr_coded(7 downto 4);
 				end if;
 			end if;
+			ALU_Not_mem <= alu_EN;
 		end if;
 	end process Idec;
 

@@ -54,6 +54,7 @@ begin
 			elsif(coded_in(3 downto 2) = "01") then 					op_sub <= '1';
 			else																	op_and <= '1';
 			end if;
+		elsif(enable = '0') then op_add <= '0'; op_sub <= '0'; op_and <= '0'; op_or <= '0';
 		end if;
 	end process alu_decc;
 end ALU_o_d_a;

@@ -73,7 +73,14 @@ LAB8:    t3 = (unsigned char)0;
 LAB9:    if (t3 != 0)
         goto LAB5;
 
-LAB6:
+LAB6:    t1 = (t0 + 1236U);
+    t2 = *((char **)t1);
+    t3 = *((unsigned char *)t2);
+    t4 = (t3 == (unsigned char)2);
+    if (t4 != 0)
+        goto LAB38;
+
+LAB39:
 LAB3:    t1 = (t0 + 2092);
     *((int *)t1) = 1;
 
@@ -147,7 +154,7 @@ LAB5:    xsi_set_current_line(50, ng0);
     xsi_set_current_line(52, ng0);
     t1 = (t0 + 776U);
     t2 = *((char **)t1);
-    t1 = (t0 + 3887);
+    t1 = (t0 + 3891);
     t3 = 1;
     if (4U == 4U)
         goto LAB16;
@@ -163,7 +170,7 @@ LAB15:    t1 = (t0 + 776U);
     t19 = (t16 * 1U);
     t20 = (0 + t19);
     t1 = (t2 + t20);
-    t5 = (t0 + 3891);
+    t5 = (t0 + 3895);
     t3 = 1;
     if (2U == 2U)
         goto LAB24;
@@ -179,7 +186,7 @@ LAB23:    t1 = (t0 + 776U);
     t19 = (t16 * 1U);
     t20 = (0 + t19);
     t1 = (t2 + t20);
-    t5 = (t0 + 3893);
+    t5 = (t0 + 3897);
     t3 = 1;
     if (2U == 2U)
         goto LAB32;
@@ -288,6 +295,40 @@ LAB36:    t7 = (t1 + t21);
 
 LAB37:    t21 = (t21 + 1);
     goto LAB35;
+
+LAB38:    xsi_set_current_line(57, ng0);
+    t1 = (t0 + 2136);
+    t5 = (t1 + 32U);
+    t6 = *((char **)t5);
+    t7 = (t6 + 40U);
+    t8 = *((char **)t7);
+    *((unsigned char *)t8) = (unsigned char)2;
+    xsi_driver_first_trans_fast_port(t1);
+    xsi_set_current_line(57, ng0);
+    t1 = (t0 + 2172);
+    t2 = (t1 + 32U);
+    t5 = *((char **)t2);
+    t6 = (t5 + 40U);
+    t7 = *((char **)t6);
+    *((unsigned char *)t7) = (unsigned char)2;
+    xsi_driver_first_trans_fast_port(t1);
+    xsi_set_current_line(57, ng0);
+    t1 = (t0 + 2208);
+    t2 = (t1 + 32U);
+    t5 = *((char **)t2);
+    t6 = (t5 + 40U);
+    t7 = *((char **)t6);
+    *((unsigned char *)t7) = (unsigned char)2;
+    xsi_driver_first_trans_fast_port(t1);
+    xsi_set_current_line(57, ng0);
+    t1 = (t0 + 2244);
+    t2 = (t1 + 32U);
+    t5 = *((char **)t2);
+    t6 = (t5 + 40U);
+    t7 = *((char **)t6);
+    *((unsigned char *)t7) = (unsigned char)2;
+    xsi_driver_first_trans_fast_port(t1);
+    goto LAB3;
 
 }
 

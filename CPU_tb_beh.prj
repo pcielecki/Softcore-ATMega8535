@@ -1,5 +1,6 @@
 vhdl work "ALU_op_decoder.vhd"
 vhdl work "reg_1x8.vhd"
+vhdl work "reg_1x1.vhd"
 vhdl work "reg_1bit_CE.vhd"
 vhdl work "mux_2x1.vhd"
 vhdl work "instruction_decoder.vhd"
