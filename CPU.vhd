@@ -113,13 +113,14 @@ architecture CPU_a of CPU is
 	end component reg_1x8;
 	
 	--signal CPU_rst : std_logic;
-	--signal CPU_clk : std_logic;
+	signal prog_clk : std_logic;
 	signal Read_Not_write : std_logic;
 	--signal CPU_Data_bus : std_logic_vector(7 downto 0);
 	--signal CPU_Address_bus : std_logic_vector(15 downto 0);
 	--signal CPU_Write_Enable : std_logic;
 	signal immediate : std_logic_vector(7 downto 0);
 	signal Immediate_not_Reg : std_logic;
+	signal mux_im				 : std_logic;
 	signal Enable_ALU : std_logic;
 	signal ALU_add : std_logic;
 	signal ALU_sub : std_logic;
@@ -130,13 +131,16 @@ architecture CPU_a of CPU is
 	signal Addr1_async : std_logic_vector(4 downto 0);
 	signal Addr2_async : std_logic_vector(4 downto 0);
 	signal Data1_async : std_logic_vector(7 downto 0);
+	--signal ALU_arg1	 : std_logic_vector(7 downto 0);
 	signal Data2_async : std_logic_vector(7 downto 0);
+	signal ALU_arg2	 : std_logic_vector(7 downto 0);
+	signal ALU_immediate: std_logic_vector(7 downto 0);
 	signal Rr_ALU		 : std_logic_vector(7 downto 0);
 	signal ALU_result  : std_logic_vector(7 downto 0);
 	signal status		 : std_logic_vector(7 downto 0);
 	
 begin
-	AVR_Idec : instruction_decoder port map(rst => CPU_rst, clk => CPU_clk, 
+	AVR_Idec : instruction_decoder port map(rst => CPU_rst, clk => prog_CLK, 
 														instr_coded => instruction, 
 														ALU_Not_mem => Enable_ALU,
 														Immediate_Not_reg => Immediate_Not_Reg,
@@ -152,7 +156,8 @@ begin
 														Data_bus => MDR_in,
 														Write_Enable => CPU_Write_Enable
 														);
-														
+	CPU_Immediate_sel_buf : reg_1x8 generic map(1) port map(rst => CPU_rst, clk => CPU_clk, D => immediate_not_reg(0 downto 0), Q => mux_im);
+		
 	CPU_MAR : reg_1x8 generic map(16) port map(rst => CPU_rst, clk => CPU_clk, D => MAR_in, Q => CPU_Address_bus);
 	
 	CPU_MDR : reg_1x8 generic map(8) port map(rst => CPU_rst, clk => CPU_clk, D => MDR_in, Q => CPU_Data_bus);
@@ -167,8 +172,12 @@ begin
 													Write_Enable => CPU_Write_Enable,
 													Not_Enable => not Enable_ALU
 													);
-														
-	ALU_mux : mux_2x8 port map(A => Data2_async, B => immediate, sel => Immediate_not_Reg, Q => Rr_ALU);
+													
+	ALUr_imm : reg_1x8 generic map(8) port map(rst => CPU_rst, clk => CPU_clk, D => immediate, Q => ALU_immediate);													
+	ALU_mux : mux_2x8 port map(A => Data2_async, B => ALU_immediate, sel => mux_im, Q => Rr_ALU);
+	
+	
+	--ALUr_arg2 : reg_1x8 generic map(8) port map(rst => CPU_rst, clk => CPU_clk, D => Rr_ALU, Q => ALU_arg2);
 	
 	AVR_ALU : ALU port map(					operand1 => Data1_async, 
 													operand2 => Rr_ALU,
@@ -183,5 +192,16 @@ begin
 	
 	ALU_acc : reg_8bit_CE port map(rst => CPU_rst, clk => CPU_clk, D => ALU_result, Enable => Enable_ALU, Q => CPU_Data_bus, Write_Enable => open);
 
+	prescale: process(CPU_clk, CPU_rst) is
+	variable tog: boolean := FALSE;
+	begin
+		if(CPU_clk'event and CPU_clk = '1') then 
+			if(tog = TRUE) then 
+				prog_clk <= '1';	tog := FALSE;
+			else
+				prog_clk <= '0'; tog := TRUE;
+			end if;
+		end if;
+	end process prescale;
 end CPU_a;
 

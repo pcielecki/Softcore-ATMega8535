@@ -77,8 +77,9 @@ begin
 			immediate_not_reg <= '0';
 			Write_Enable <= '1';
 			ALU_Not_mem <= '0';
+			if(instr_coded = "0000000000000000") then Write_Enable <= '1';
 			
-			if(instr_coded(15) = '1') then -- not activate ALU
+			elsif(instr_coded(15) = '1') then -- not activate ALU
 				ALU_Not_mem <= '0';
 				if(instr_coded(13) = '1') then --not manipulate PC
 					immediate_not_reg <= '1';
