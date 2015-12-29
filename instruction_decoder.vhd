@@ -85,7 +85,7 @@ begin
 			elsif(instr_coded(15) = '1') then -- not activate ALU
 				alu_EN <= '0';
 				if(instr_coded(13) = '1') then --not manipulate PC
-					immediate_not_reg <= '1';
+					--immediate_not_reg <= '1';
 					Write_Enable <= '1';
 					Address_bus <= "000000000001" & instr_coded(7 downto 4);
 					Data_bus <= instr_coded(11 downto 8) & instr_coded(3 downto 0);
@@ -93,8 +93,9 @@ begin
 
 			else
 				alu_EN <= '1';
-				Write_Enable <= '1';
+				Write_Enable <= 'L';
 				alu_instr <= instr_coded(13 downto 10);
+				Data_bus <= (others => 'Z');
 				
 				if(instr_coded(14) = '0') then --ALU operation btw. 2 regs	
 					reg1 <= instr_coded(8 downto 4);				

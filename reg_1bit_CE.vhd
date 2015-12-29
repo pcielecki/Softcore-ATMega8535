@@ -46,8 +46,8 @@ begin
 		if(rst = '0') then Q <= (others => 'Z');
 		elsif(clk'event and clk = '1') then
 
-			if(Enable = '1') then 	Q <= D; --Write_Enable <= '1';--tak  nie moze byc. WE nie moze byc sterowane stad.
-			else Q <= (others => 'Z');-- Write_Enable <= 'Z';
+			if(Enable = '1') then 	Q <= D; Write_Enable <= '1';--tak  nie moze byc. WE nie moze byc sterowane stad.
+			else Q <= (others => 'Z'); Write_Enable <= 'Z';
 					
 			end if;
 		end if;

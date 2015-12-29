@@ -187,7 +187,7 @@ begin
 	
 	
 	--ALUr_arg2 : reg_1x8 generic map(8) port map(rst => CPU_rst, clk => CPU_clk, D => Rr_ALU, Q => ALU_arg2);
-	Enable_ALU_reg : reg_1x1 port map(rst => CPU_rst, clk => CPU_clk, D => Idec_enable_alu, Q => Enable_ALU);
+	--Enable_ALU_reg : reg_1x1 port map(rst => CPU_rst, clk => CPU_clk, D => Idec_enable_alu, Q => Enable_ALU);
 	
 	AVR_ALU : ALU port map(					operand1 => Data1_async, 
 													operand2 => Rr_ALU,
@@ -200,7 +200,7 @@ begin
 													status_out => status
 													);
 	
-	ALU_acc : reg_8bit_CE port map(rst => CPU_rst, clk => CPU_clk, D => ALU_result, Enable => Enable_ALU, Q => CPU_Data_bus, Write_Enable => open);
+	ALU_acc : reg_8bit_CE port map(rst => CPU_rst, clk => CPU_clk, D => ALU_result, Enable => Idec_enable_alu, Q => CPU_Data_bus, Write_Enable => CPU_Write_Enable);
 
 	prescale: process(CPU_clk, CPU_rst) is
 	variable tog: boolean := FALSE;
