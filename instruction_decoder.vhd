@@ -49,44 +49,48 @@ entity instruction_decoder is
 end instruction_decoder;
 
 architecture Idec_a of instruction_decoder is
-type STATE is (IDLE, 
-					ALU_INSTR_C1_IM, ALU_INSTR_C2, ALU_INSTR_C3, 
+
+	type STATE is (IDLE, 
+					ALU_INSTR_C1_REG, ALU_INSTR_C1_IMM, ALU_INSTR_C2, ALU_INSTR_C3, 
 					MEM_INSTR_C1,
-					COMMMON_C1, COMMON_C2);
-	signal idec_state : states := IDLE;
+					COMMON_C1);
+	signal idec_state : STATE := IDLE;
+	signal last_instr : std_logic_vector(15 downto 0) ;
+	
 begin
-	idec_transitions: process(clk, rst) is
+
+	idec_auto: process(clk, rst) is
 	begin
 		if(rst = '0') then idec_state <= IDLE;
 		elsif(clk'event and clk = '1') then
-			if(idec_state = IDLE) then
-				if(instr_coded(15) = '0') then 	idec_state <= ALU_INSTR_C1;
-				else										idec_state <= MEM_INSTR_C1;
-				end if;
-			else
 			case idec_state is
+				when IDLE			=>					if(instr_coded = "0000000000000000" or instr_coded = last_instr) 	
+																then 	idec_state <= IDLE;
+															elsif(instr_coded(15) = '0') 													
+																then 	if(instr_coded(14) = '0') then idec_state <= ALU_INSTR_C1_REG;
+																		else									 idec_state <= ALU_INSTR_C1_IMM;
+																		end if;
+															else
+																idec_state <= MEM_INSTR_C1;
+															end if;
 				when ALU_INSTR_C1 => 				idec_state <= ALU_INSTR_C2;
 				when ALU_INSTR_C2 => 				idec_state <= ALU_INSTR_C3;
 				when ALU_INSTR_C3 => 				idec_state <= COMMON_C1;	
 				when MEM_INSTR_C1 => 				idec_state <= COMMON_C1;
-				when COMMON_C1		=>					idec_state <= COMMON_C2;
-				when COMMON_C2		=>					idec_state <= IDLE;
-			end case;
-			end if;
-		end if;
-	end process idec_transitions;
-
-	idec_outs : process(clk,rst) is
-	begin
-		if(clk'event and clk = '1') then
-			case idec_state is
-					when ALU_INSTR_C1 => 						reg1 <= instr_coded(8 downto 4);				
-																		reg2 <= instr_coded(9) & instr_coded(3 downto 0);		
-																		
-					
+				when others 		=>					idec_state <= IDLE;
 			end case;
 		end if;
-	end process idec_outs;
-
+	end process idec_auto;
+	
+	Write_Enable <= '1' 															when idec_state = COMMON_C1 else '0';
+	reg1 <= instr_coded(8 downto 4) 											when idec_state = ALU_INSTR_C1 else (others => '0'); 
+	reg2 <= instr_coded(9) & instr_coded(3 downto 0)					when idec_state = ALU_INSTR_C1 else (others => '0'); 
+	ALU_Not_mem <= '1'															when idec_state = ALU_INSTR_C2 else '0';
+	Address_bus <= "000000000001" & instr_coded(7 downto 4)			when idec_state = MEM_INSTR_C1 else 
+		(others => 'Z') 															when idec_state = IDLE;
+	Data_bus <= instr_coded(11 downto 8) & instr_coded(3 downto 0) when idec_state = MEM_INSTR_C1 else
+		(others => 'Z')															when idec_state = IDLE;
+	last_instr <= instr_coded													when idec_state = COMMON_C1;
+	
 end Idec_a;
 

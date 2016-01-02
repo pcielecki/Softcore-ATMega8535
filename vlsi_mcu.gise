@@ -28,9 +28,7 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ALU_tb_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="CPU_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="CPU_stx_beh.prj"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="CPU_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="CPU_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="CPU_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="CPU_tb_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Idec_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Idec_tb_stx_beh.prj"/>
@@ -44,11 +42,14 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="gp_regs_tb_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="gpr_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="gpr_tb_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="idec_test_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="idec_test_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="idec_test_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="idec_test_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="instruction_decoder_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="instruction_decoder_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="reg_1x8_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="reg_4x8_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="reg_4x8_tb_isim_beh.exe"/>
@@ -66,13 +67,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1451417022" xil_pn:in_ck="3267353789949670481" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1451417022">
+    <transform xil_pn:end_ts="1451736353" xil_pn:in_ck="6429132323134461717" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1451736353">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ALU.vhd"/>
       <outfile xil_pn:name="ALU_op_decoder.vhd"/>
       <outfile xil_pn:name="CPU.vhd"/>
@@ -82,6 +79,7 @@
       <outfile xil_pn:name="dec_1_to_8.vhd"/>
       <outfile xil_pn:name="gp_registerss.vhd"/>
       <outfile xil_pn:name="gpr_tb.vhd"/>
+      <outfile xil_pn:name="idec_test.vhd"/>
       <outfile xil_pn:name="instruction_decoder.vhd"/>
       <outfile xil_pn:name="mux_2x1.vhd"/>
       <outfile xil_pn:name="reg_1bit_CE.vhd"/>
@@ -90,11 +88,11 @@
       <outfile xil_pn:name="reg_4x8.vhd"/>
       <outfile xil_pn:name="tri_state_buf.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1451417036" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="3153073286561572531" xil_pn:start_ts="1451417036">
+    <transform xil_pn:end_ts="1451734975" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8525097336437035414" xil_pn:start_ts="1451734975">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1451417036" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-9125124551909943023" xil_pn:start_ts="1451417036">
+    <transform xil_pn:end_ts="1451734975" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="8311354579646982984" xil_pn:start_ts="1451734975">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -102,11 +100,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1451417022" xil_pn:in_ck="3267353789949670481" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1451417022">
+    <transform xil_pn:end_ts="1451735024" xil_pn:in_ck="6429132323134461717" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1451735024">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
@@ -119,6 +116,7 @@
       <outfile xil_pn:name="dec_1_to_8.vhd"/>
       <outfile xil_pn:name="gp_registerss.vhd"/>
       <outfile xil_pn:name="gpr_tb.vhd"/>
+      <outfile xil_pn:name="idec_test.vhd"/>
       <outfile xil_pn:name="instruction_decoder.vhd"/>
       <outfile xil_pn:name="mux_2x1.vhd"/>
       <outfile xil_pn:name="reg_1bit_CE.vhd"/>
@@ -127,32 +125,28 @@
       <outfile xil_pn:name="reg_4x8.vhd"/>
       <outfile xil_pn:name="tri_state_buf.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1451417044" xil_pn:in_ck="3267353789949670481" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-2985898564420136106" xil_pn:start_ts="1451417036">
+    <transform xil_pn:end_ts="1451735030" xil_pn:in_ck="6429132323134461717" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3841470367298449988" xil_pn:start_ts="1451735024">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="CPU_tb_beh.prj"/>
-      <outfile xil_pn:name="CPU_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="idec_test_beh.prj"/>
+      <outfile xil_pn:name="idec_test_isim_beh.exe"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1451417045" xil_pn:in_ck="2248127966856011102" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4155118664679322371" xil_pn:start_ts="1451417044">
+    <transform xil_pn:end_ts="1451735031" xil_pn:in_ck="-6861335688991732895" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6370282089790550833" xil_pn:start_ts="1451735030">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="CPU_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="idec_test_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
     </transform>
   </transforms>
 
