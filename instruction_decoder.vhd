@@ -73,7 +73,8 @@ begin
 															else
 																idec_state <= MEM_INSTR_C1;
 															end if;
-				when ALU_INSTR_C1 => 				idec_state <= ALU_INSTR_C2;
+				when ALU_INSTR_C1_REG  => 				idec_state <= ALU_INSTR_C2;
+				when ALU_INSTR_C1_IMM  => 				idec_state <= ALU_INSTR_C2;
 				when ALU_INSTR_C2 => 				idec_state <= ALU_INSTR_C3;
 				when ALU_INSTR_C3 => 				idec_state <= COMMON_C1;	
 				when MEM_INSTR_C1 => 				idec_state <= COMMON_C1;
@@ -83,13 +84,26 @@ begin
 	end process idec_auto;
 	
 	Write_Enable <= '1' 															when idec_state = COMMON_C1 else '0';
-	reg1 <= instr_coded(8 downto 4) 											when idec_state = ALU_INSTR_C1 else (others => '0'); 
-	reg2 <= instr_coded(9) & instr_coded(3 downto 0)					when idec_state = ALU_INSTR_C1 else (others => '0'); 
+	
+	reg1 <= 	instr_coded(8 downto 4) 										when idec_state = ALU_INSTR_C1_REG else
+				'1' & instr_coded(7 downto 4)									when idec_state = ALU_INSTR_C1_IMM; 
+	
+	reg2 <= instr_coded(9) & instr_coded(3 downto 0)					when idec_state = ALU_INSTR_C1_REG; 
+	
 	ALU_Not_mem <= '1'															when idec_state = ALU_INSTR_C2 else '0';
-	Address_bus <= "000000000001" & instr_coded(7 downto 4)			when idec_state = MEM_INSTR_C1 else 
+	
+	Immediate_Not_reg <= '1'													when idec_state = ALU_INSTR_C1_IMM else
+								'0' 													when idec_state = IDLE;
+	
+	Immediate <= instr_coded(11 downto 8) & instr_coded(3 downto 0)when idec_state = ALU_INSTR_C1_IMM;
+	
+	Address_bus <= "000000000001" & instr_coded(7 downto 4)			when idec_state = MEM_INSTR_C1 or idec_state=ALU_INSTR_C1_IMM else 
+						"00000000000"  & instr_coded(8 downto 4)			when idec_state = ALU_INSTR_C1_REG	else
 		(others => 'Z') 															when idec_state = IDLE;
+		
 	Data_bus <= instr_coded(11 downto 8) & instr_coded(3 downto 0) when idec_state = MEM_INSTR_C1 else
 		(others => 'Z')															when idec_state = IDLE;
+		
 	last_instr <= instr_coded													when idec_state = COMMON_C1;
 	
 end Idec_a;

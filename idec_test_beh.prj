@@ -1,2 +1,0 @@
-vhdl work "instruction_decoder.vhd"
-vhdl work "idec_test.vhd"

@@ -1,21 +1,42 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/idec_test_isim_beh.exe" -prj "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/idec_test_beh.prj" "work.idec_test" 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU_tb_isim_beh.exe" -prj "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU_tb_beh.prj" "work.CPU_tb" 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1x8.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1x1.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1bit_CE.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/mux_2x1.vhd" into library work
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" into library work
-Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/idec_test.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/ALU.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd" into library work
+WARNING:HDLCompiler:946 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd" Line 182: Actual for formal port not_enable is neither a static name nor a globally static expression
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 119796 KB
-Fuse CPU Usage: 607 ms
+Fuse Memory Usage: 120900 KB
+Fuse CPU Usage: 748 ms
 Compiling package standard
 Compiling package std_logic_1164
+Compiling package textio
+Compiling package std_logic_textio
+Compiling package numeric_std
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
 Compiling architecture idec_a of entity instruction_decoder [instruction_decoder_default]
-Compiling architecture behavior of entity idec_test
+Compiling architecture reg_1x1_a of entity reg_1x1 [reg_1x1_default]
+Compiling architecture reg_1x8_a of entity reg_1x8 [\reg_1x8(16)\]
+Compiling architecture reg_1x8_a of entity reg_1x8 [\reg_1x8(8)\]
+Compiling architecture gpr_a of entity gp_registerss [gp_registerss_default]
+Compiling architecture mux_a of entity mux_2x8 [mux_2x8_default]
+Compiling architecture alu_a of entity ALU [alu_default]
+Compiling architecture reg_8bit_ce_a of entity reg_8bit_CE [reg_8bit_ce_default]
+Compiling architecture cpu_a of entity CPU [cpu_default]
+Compiling architecture behavior of entity cpu_tb
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 5 VHDL Units
-Built simulation executable C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/idec_test_isim_beh.exe
-Fuse Memory Usage: 128740 KB
-Fuse CPU Usage: 795 ms
+Waiting for 9 sub-compilation(s) to finish...
+Compiled 26 VHDL Units
+Built simulation executable C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU_tb_isim_beh.exe
+Fuse Memory Usage: 145140 KB
+Fuse CPU Usage: 1762 ms
