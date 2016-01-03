@@ -12,13 +12,13 @@
          <ClosedNode>/instruction_decoder - Idec_a C:|Users|Piotr|workspace|vlsi|vlsi_mcu|instruction_decoder.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>AVR_Idec - instruction_decoder - Idec_a (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd)</SelectedItem>
+         <SelectedItem>ALU_op_decoder - ALU_o_d_a (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/ALU_op_decoder.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001b2000000020000000000000000000000000200000064ffffffff000000810000000300000002000001b20000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>AVR_Idec - instruction_decoder - Idec_a (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd)</CurrentItem>
+      <CurrentItem>ALU_op_decoder - ALU_o_d_a (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/ALU_op_decoder.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -78,18 +78,22 @@
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/Idec_tb - behavior C:|Users|Piotr|workspace|vlsi|vlsi_mcu|VLSI_MCU|Idec_tb.vhd</ClosedNode>
          <ClosedNode>/Universal_registers - Universal_reg_a C:|Users|Piotr|workspace|vlsi|vlsi_mcu|Universal_registers.vhd</ClosedNode>
          <ClosedNode>/Universal_registers_tb - behavior C:|Users|Piotr|workspace|vlsi|vlsi_mcu|Universal_registers_tb.vhd/uut - Universal_registers - Universal_reg_a</ClosedNode>
+         <ClosedNode>/alu_tb - behavior C:|Users|Piotr|workspace|vlsi|vlsi_mcu|VLSI_MCU|alu_tb.vhd</ClosedNode>
+         <ClosedNode>/gpr_tb - behavior C:|Users|Piotr|workspace|vlsi|vlsi_mcu|VLSI_MCU|gpr_tb.vhd</ClosedNode>
+         <ClosedNode>/idec_test - behavior C:|Users|Piotr|workspace|vlsi|vlsi_mcu|VLSI_MCU|idec_test.vhd</ClosedNode>
          <ClosedNode>/reg_4x8_test - behavior C:|Users|Piotr|workspace|vlsi|vlsi_mcu|reg_4x8_test.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>idec_test - behavior (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/idec_test.vhd)</SelectedItem>
+         <SelectedItem>CPU_tb - behavior (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU_tb.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >18</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001c6000000020000000000000000000000000200000064ffffffff000000810000000300000002000001c60000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>idec_test - behavior (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/idec_test.vhd)</CurrentItem>
+      <CurrentItem>CPU_tb - behavior (C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU_tb.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>

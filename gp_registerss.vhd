@@ -57,14 +57,13 @@ begin
 	regs : process(clk, rst) is
 	begin
 		if(rst = '0') then Address_bus <= (others => 'Z'); Data_bus <= (others => 'Z');
-		
+		Data_bus <= (others => 'Z'); Address_bus <= (others => 'Z');
 		elsif(clk'event and clk = '1') then
-			Data_bus <= (others => 'Z');	Address_bus <= (others => 'Z');
 			if(Write_Enable = '1' ) then
-				--mem_array(	to_integer(	unsigned(Address_bus(4 downto 0)))	) <= (others => 'Z');
 				mem_array(	to_integer(	unsigned(Address_bus(4 downto 0)))	) <= Data_bus;
-			elsif(Write_Enable = '0') then
-				Data_bus <= mem_array(	to_integer(	unsigned(Address_bus(4 downto 0))) );
+			elsif(Write_Enable = '0' and Address_bus(15 downto 5) = ("00000000000")) then
+				--Data_bus <= mem_array(	to_integer(	unsigned(Address_bus(4 downto 0))) );
+
 			end if;
 		end if;
 	end process regs;

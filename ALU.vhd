@@ -51,7 +51,8 @@ begin
 		result <= operand1 + operand2 when op_add = '1' else
 					 operand1 - operand2 when op_sub = '1' else
 					 operand1 and operand2 when op_and = '1' else
-					 operand1 or operand2 ;
+					 operand1 or operand2 when op_or = '1' else
+					 operand1 					;
 
 		
 end architecture ALU_a;

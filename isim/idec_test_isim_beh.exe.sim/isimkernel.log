@@ -2,14 +2,14 @@ Command line:
    idec_test_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  51998
+     -socket  50790
 
-Sat Jan 02 18:20:35 2016
+Sun Jan 03 14:49:51 2016
 
 
- Elaboration Time: 0.405603 sec
+ Elaboration Time: 0.390003 sec
 
- Current Memory Usage: 673.923 Meg
+ Current Memory Usage: 673.612 Meg
 
  Total Signals          : 46
  Total Nets             : 134
@@ -25,4 +25,11 @@ Total Line Count : 54
 User(VHDL) Code Called Simulation Stop
 In process idec_test.vhd:stim_proc 
  
+
+
+ Total Simulation Time: 1.93441 sec
+
+ Current Memory Usage: 673.612 Meg
+
+Sun Jan 03 14:57:18 2016
 
