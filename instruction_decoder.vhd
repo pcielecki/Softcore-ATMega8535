@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 -- Company: 
 -- Engineer: 
 -- 
@@ -38,11 +38,8 @@ entity instruction_decoder is
 			  manipulate_PC : out std_logic;
            reg1 : out  STD_LOGIC_VECTOR (4 downto 0);
            reg2 : out  STD_LOGIC_VECTOR (4 downto 0);
-			  op_add : out std_logic;
-			  op_sub : out std_logic;
-			  op_and : out std_logic;
-			  op_or : out std_logic;
-			  immediate:out std_logic_vector(7 downto 0);		
+			  alu_decoder : out std_logic_vector(3 downto 0);
+			  ALU_immediate:out std_logic_vector(7 downto 0);		
 			  relative_PC: out std_logic_vector(15 downto 0);
 			  Address_bus : out std_logic_vector(15 downto 0);
 			  Data_bus : out std_logic_vector(7 downto 0);
@@ -51,21 +48,13 @@ end instruction_decoder;
 
 architecture Idec_a of instruction_decoder is
 
-	type STATE is (IDLE, FETCH, MEM_ACCESS, EX_ALU, MEM_WRITEBACK);
-	signal idec_state : STATE := IDLE;
+	type STATE is (IDLE, ALU_INSTR, DMA, IN_OUT, BRANCH,  MEM_WRITEBACK);
+	signal idec_state, last_state  : STATE := IDLE;
 	
 	signal Add_for_Addbus_p1 	: std_logic_vector(15 downto 0);
 	signal Data_for_Dbus_p1  	: std_logic_vector(7 downto 0);
-	signal DBbus_immediate_p1	: std_logic;
-	signal register_1_p1			: std_logic_vector(4  downto 0);
-	signal register_2_p1			: std_logic_vector(4 downto 0);
-	signal use_immediate_p1		: std_logic;
-	signal imm_for_alu_p1		: std_logic_vector(7 downto 0);
-	signal ALU_AND, ALU_OR, ALU_ADD, ALU_SUB	: std_logic;
 	signal last_instr_p1		 	: std_logic_vector(15 downto 0) ;
-	signal write_PC_p1			: std_logic;
-	signal conditional_branch 	: std_logic;
-	
+
 begin
 
 	idec_auto: process(clk, rst) is
@@ -75,74 +64,64 @@ begin
 			case idec_state is
 				when IDLE			=>		if(instr_coded = "0000000000000000" or instr_coded = last_instr_p1) 	
 													then 	idec_state <= IDLE;
-												else
-													idec_state <= FETCH;
+												elsif(instr_coded(15) = '0') 					
+													then 	idec_state <= ALU_INSTR;
+												elsif(instr_coded(15 downto 12) = "1111" 	)
+													then 	idec_state <= BRANCH;
+												else															
+													idec_state <= DMA;
 												end if;
-				when FETCH  		=> 	idec_state <= MEM_ACCESS;
-				when MEM_ACCESS  	=> 	idec_state <= EX_ALU;
-				when EX_ALU 		=> 	idec_state <= MEM_WRITEBACK;
-				when others 		=>		idec_state <= IDLE;
+												
+				when MEM_WRITEBACK =>		if(instr_coded = "0000000000000000" or instr_coded = last_instr_p1) 	
+													then 	idec_state <= IDLE;
+												elsif(instr_coded(15) = '0') 					
+													then 	idec_state <= ALU_INSTR;
+												elsif(instr_coded(15 downto 12) = "1111" 	)
+													then 	idec_state <= BRANCH;
+												else															
+													idec_state <= DMA;
+												end if;
+												
+				when others  		 => 	last_state <= idec_state;idec_state <= MEM_WRITEBACK;
+
 			end case;
 		end if;
 	end process idec_auto;
 	
-	--INSTRUCTION FETCH
-	register_1_p1 <= 	instr_coded(8 downto 4) 										when idec_state = FETCH and instr_coded(14) = '0' else
-					'1' & instr_coded(7 downto 4)								when idec_state = FETCH; 
-		
-	register_2_p1 <= instr_coded(9) & instr_coded(3 downto 0)					when idec_state = FETCH; 		
-		
-	Add_for_Addbus_p1 <= "000000000001" & instr_coded(7 downto 4)			when idec_state = FETCH and instr_coded(13) = '1' else 
-								"00000000000"  & instr_coded(8 downto 4)			when idec_state = FETCH; 
+	--ALU_INSTR--
+	reg1 <= 	instr_coded(8 downto 4) 											when idec_state = ALU_INSTR and instr_coded(14) = '0' else
+				'1' & instr_coded(7 downto 4)										when idec_state = ALU_INSTR; 	
 	
-	DBbus_immediate_p1 <= 	'0'													when idec_state = FETCH and instr_coded(15) = '0' else
-									'1'													when idec_state = FETCH;
+	reg2 <= instr_coded(9) & instr_coded(3 downto 0)						when idec_state = ALU_INSTR; 	
 	
-	use_immediate_p1 <= 	'1'													when idec_state = FETCH and instr_coded(14) = '1' else
-								'0' 													when idec_state = FETCH;	
-								
-	conditional_branch <= '1'													when idec_state = FETCH and instr_coded(15 downto 12) = "1111" else
-								 '0'													when idec_state = FETCH;
-								 
+	ALU_Immediate <= instr_coded(11 downto 8) & instr_coded(3 downto 0)when idec_state = ALU_INSTR;
+	Immediate_not_reg <= instr_coded(14) 		 								when idec_state = ALU_INSTR;
+	
+	ALU_Not_mem <= not instr_coded(15) 											when idec_state = ALU_INSTR	 else '0';
+	
+	ALU_decoder <= instr_coded(13 downto 10)									when idec_state = ALU_INSTR;
 	
 	
-	imm_for_alu_p1 <= instr_coded(11 downto 8) & instr_coded(3 downto 0)when idec_state = FETCH;
-			
-	Data_for_Dbus_p1 <= instr_coded(11 downto 8) & instr_coded(3 downto 0) when idec_state = FETCH and instr_coded(15) = '1'; 
+	--ALU_INSTR or DMA ora IN_OUT--
+	Add_for_Addbus_p1 <= "000000000001" & instr_coded(7 downto 4)		when idec_state = ALU_INSTR and instr_coded(13) = '1' else 
+								"00000000000"  & instr_coded(8 downto 4)		when idec_state = ALU_INSTR else
+								"000000000001" & instr_coded(7 downto 4)		when idec_state = DMA		 else
+								"00000000000"  &  instr_coded(8 downto 4) 	when idec_state = IN_OUT and instr_coded(11) = '1'  else
+								"0000000000"   & instr_coded(11 downto 9) & instr_coded(3 downto 0) 
+									when idec_state = IN_OUT;
+	
+	--DMA--
+	Data_for_DBus_p1 <= instr_coded(11 downto 8) & instr_coded(3 downto 0) when idec_state = DMA;
 
-									
-	Write_PC_p1 				<= '1'										when idec_state = FETCH and instr_coded(15 downto 14) = "10" else
-									'0'										when idec_state = FETCH;
-								
-	last_instr_p1 <= instr_coded													when idec_state = FETCH;
-	
-	ALU_AND <= '1' when idec_state = FETCH and (instr_coded(13 downto 10) = "1000" or instr_coded(13 downto 12) = "11") else '0' when idec_state = FETCH;
-	ALU_OR  <= '1' when idec_state = FETCH and instr_coded(13 downto 12) = "10"  	else '0' when idec_state = FETCH;
-	ALU_ADD <= '1' when idec_state = FETCH and instr_coded(13 downto 10) = "0011" 	else '0' when idec_state = FETCH;
-	ALU_SUB <= '1' when idec_state = FETCH and instr_coded(13 downto 12) = "01"	else '0' when idec_state = FETCH;
-	
+	--IN_OUT--
+	--Address_bus <= "0000000000" & instr_coded(8 downto 4) 				when idec_state = IN_OUT and instr_coded(11) = '1' else 
+	--					"0000000000" & instr_coded(11 downto 9) & instr_coded(3 downto 0) when idec_state = IN_OUT;
 		
-	--MEMORY_ACCESS
-	reg1 <= register_1_p1	when idec_state = MEM_ACCESS;
-	reg2 <= register_2_p1	when idec_state = MEM_ACCESS;
-	Immediate <= imm_for_alu_p1					when idec_state = EX_ALU;
-	Immediate_Not_reg <= use_immediate_p1 	when idec_state = EX_ALU;
-	
-	--ALU_EXECUTION
-	op_and <= ALU_and when idec_state = EX_ALU and DBbus_immediate_p1 = '0';
-	op_or <= ALU_or when idec_state = EX_ALU and DBbus_immediate_p1 = '0';
-	op_add <= ALU_add when idec_state = EX_ALU and DBbus_immediate_p1 = '0';
-	op_sub <= ALU_sub when idec_state = EX_ALU and DBbus_immediate_p1 = '0';	
-	ALU_Not_mem <= not DBbus_immediate_p1 when idec_state = EX_ALU	 else '0';
-	
-	--MEM_WRITEBACK
+	--MEM_WRITEBACK--
 	Address_bus <= Add_for_Addbus_p1 when idec_state = MEM_WRITEBACK else (others => 'Z');
-	Data_bus 	<= Data_for_dbus_p1 when idec_state = MEM_WRITEBACK and DBbus_immediate_p1 = '1' else (others => 'Z');
+	Data_bus 	<= Data_for_Dbus_p1 when idec_state = MEM_WRITEBACK  and last_state /= ALU_INSTR else (others => 'Z');
 	Write_enable <= '1' when idec_state = MEM_WRITEBACK else '0';
-	manipulate_PC <= Write_PC_p1 when idec_state = MEM_WRITEBACK;
+	--manipulate_PC <= Write_PC_p1 when idec_state = MEM_WRITEBACK;
 	
-	--IDLE
-
 	
 end Idec_a;
-

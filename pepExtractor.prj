@@ -1,1 +1,1 @@
-work	"progmem.vhd"
+work	"instruction_decoder.vhd"

@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   12:41:28 01/02/2016
+-- Create Date:   23:02:03 01/11/2016
 -- Design Name:   
 -- Module Name:   C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/idec_test.vhd
 -- Project Name:  vlsi_mcu
@@ -49,11 +49,9 @@ ARCHITECTURE behavior OF idec_test IS
          manipulate_PC : OUT  std_logic;
          reg1 : OUT  std_logic_vector(4 downto 0);
          reg2 : OUT  std_logic_vector(4 downto 0);
-         op_add : OUT  std_logic;
-         op_sub : OUT  std_logic;
-         op_and : OUT  std_logic;
-         op_or : OUT  std_logic;
-         immediate : OUT  std_logic_vector(7 downto 0);
+         alu_decoder : OUT  std_logic_vector(3 downto 0);
+         ALU_immediate : OUT  std_logic_vector(7 downto 0);
+         relative_PC : OUT  std_logic_vector(15 downto 0);
          Address_bus : OUT  std_logic_vector(15 downto 0);
          Data_bus : OUT  std_logic_vector(7 downto 0);
          Write_Enable : OUT  std_logic
@@ -72,11 +70,9 @@ ARCHITECTURE behavior OF idec_test IS
    signal manipulate_PC : std_logic;
    signal reg1 : std_logic_vector(4 downto 0);
    signal reg2 : std_logic_vector(4 downto 0);
-   signal op_add : std_logic;
-   signal op_sub : std_logic;
-   signal op_and : std_logic;
-   signal op_or : std_logic;
-   signal immediate : std_logic_vector(7 downto 0);
+   signal alu_decoder : std_logic_vector(3 downto 0);
+   signal ALU_immediate : std_logic_vector(7 downto 0);
+   signal relative_PC : std_logic_vector(15 downto 0);
    signal Address_bus : std_logic_vector(15 downto 0);
    signal Data_bus : std_logic_vector(7 downto 0);
    signal Write_Enable : std_logic;
@@ -96,11 +92,9 @@ BEGIN
           manipulate_PC => manipulate_PC,
           reg1 => reg1,
           reg2 => reg2,
-          op_add => op_add,
-          op_sub => op_sub,
-          op_and => op_and,
-          op_or => op_or,
-          immediate => immediate,
+          alu_decoder => alu_decoder,
+          ALU_immediate => ALU_immediate,
+          relative_PC => relative_PC,
           Address_bus => Address_bus,
           Data_bus => Data_bus,
           Write_Enable => Write_Enable
@@ -123,21 +117,23 @@ BEGIN
 		
 		rst <= '1';
 		instruction <= "1110101000001010"; --LDI R16, 0b10101010
-		wait for 5*clk_period;
+		wait for 2*clk_period;
 		
 		
 		instruction <= "1110000000010111"; --LDI R17, 0b00000111
-		wait for 5*clk_period;
+		wait for 2*clk_period;
 
-		
+		--		assert false severity failure;
 		instruction <= "0000111100000001";	--ADD R16, R17
-		wait for 5*clk_period;
+		wait for 2*clk_period;
+		
+		--assert false severity failure;
 		
 		instruction <= "1110000000010111"; --LDI R17, 0b00000111
-		wait for 5*clk_period;
+		wait for 2*clk_period;
 		
 		instruction <= "0111110000011100";	--ANDI R17, 0b11001100
-		wait for 5*clk_period;
+		wait for 2*clk_period;
 		
 		instruction <= (others => '1');
 		wait for 6*clk_period;

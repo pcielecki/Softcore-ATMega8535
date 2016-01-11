@@ -46,17 +46,12 @@ architecture gpr_a of gp_registerss is
 	type mem is array(0 to 31) of std_logic_vector(7 downto 0);
 	signal mem_array : mem;
 begin
-	reg1_2 : process(clk, rst) is
-	begin
-	if(clk'event and clk = '1') then
 			Data1 <= mem_array(	to_integer(	unsigned(	Addr1(4 downto 0)	) 	)	);
 			Data2 <= mem_array(	to_integer(	unsigned(	Addr2(4 downto 0)	)	)	);
-		end if;
-	end process reg1_2;
-	
+
 	regs : process(clk, rst) is
 	begin
-		if(rst = '0') then Address_bus <= (others => 'Z'); Data_bus <= (others => 'Z');
+		if(rst = '0') then Address_bus <= (others => 'Z'); Data_bus <= (others => 'Z'); mem_array <= (others => "00000000");
 		Data_bus <= (others => 'Z'); Address_bus <= (others => 'Z');
 		elsif(clk'event and clk = '1') then
 			if(Write_Enable = '1' ) then

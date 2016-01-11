@@ -37,25 +37,16 @@ entity ALU_op_decoder is
            op_add : out  STD_LOGIC;
            op_sub : out  STD_LOGIC;
            op_and : out  STD_LOGIC;
-           op_or : out  STD_LOGIC;
-			  enable : in std_logic);
+           op_or : out  STD_LOGIC
+			  );
 end ALU_op_decoder;
 
 architecture ALU_o_d_a of ALU_op_decoder is
 begin
-	alu_decc: process(clk, rst) is
-	begin
-		if(rst = '0') then op_add <= '0'; op_sub <= '0'; op_and <= '0'; op_or <= '0';
-		elsif(clk'event and clk = '1' and enable = '1') then
-			op_add <= '0'; op_sub <= '0'; op_and <= '0'; op_or <= '0';
-			
-			if(coded_in = "0011") 				  then 					op_add <= '1';
-			elsif(coded_in(3 downto 2) = "10") then					op_or  <= '1';
-			elsif(coded_in(3 downto 2) = "01") then 					op_sub <= '1';
-			else																	op_and <= '1';
-			end if;
-		elsif(enable = '0') then op_add <= '0'; op_sub <= '0'; op_and <= '0'; op_or <= '0';
-		end if;
-	end process alu_decc;
+	
+	op_and <= '1' when(instr_coded(13 downto 10) = "1000" or instr_coded(13 downto 12) = "11") else '0' when idec_state = FETCH;
+	op_or  <= '1' when instr_coded(13 downto 12) = "10"  	else '0' when idec_state = FETCH;
+	op_add <= '1' when instr_coded(13 downto 10) = "0011" 	else '0' when idec_state = FETCH;
+	op_sub <= '1' when instr_coded(13 downto 12) = "01"	else '0' when idec_state = FETCH;
 end ALU_o_d_a;
 

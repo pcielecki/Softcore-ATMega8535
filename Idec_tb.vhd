@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   19:48:22 12/27/2015
+-- Create Date:   23:00:48 01/11/2016
 -- Design Name:   
--- Module Name:   C:/Users/Piotr/workspace/vlsi/vlsi_mcu/Idec_tb.vhd
+-- Module Name:   C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/idec_tb.vhd
 -- Project Name:  vlsi_mcu
 -- Target Device:  
 -- Tool versions:  
@@ -32,10 +32,10 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY Idec_tb IS
-END Idec_tb;
+ENTITY idec_tb IS
+END idec_tb;
  
-ARCHITECTURE behavior OF Idec_tb IS 
+ARCHITECTURE behavior OF idec_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
@@ -49,13 +49,12 @@ ARCHITECTURE behavior OF Idec_tb IS
          manipulate_PC : OUT  std_logic;
          reg1 : OUT  std_logic_vector(4 downto 0);
          reg2 : OUT  std_logic_vector(4 downto 0);
-         op_add : OUT  std_logic;
-         op_sub : OUT  std_logic;
-         op_and : OUT  std_logic;
-         op_or : OUT  std_logic;
-         immediate : OUT  std_logic_vector(7 downto 0);
+         alu_decoder : OUT  std_logic_vector(3 downto 0);
+         ALU_immediate : OUT  std_logic_vector(7 downto 0);
+         relative_PC : OUT  std_logic_vector(15 downto 0);
          Address_bus : OUT  std_logic_vector(15 downto 0);
-         Data_bus : OUT  std_logic_vector(7 downto 0)
+         Data_bus : OUT  std_logic_vector(7 downto 0);
+         Write_Enable : OUT  std_logic
         );
     END COMPONENT;
     
@@ -71,14 +70,12 @@ ARCHITECTURE behavior OF Idec_tb IS
    signal manipulate_PC : std_logic;
    signal reg1 : std_logic_vector(4 downto 0);
    signal reg2 : std_logic_vector(4 downto 0);
-   signal op_add : std_logic;
-   signal op_sub : std_logic;
-   signal op_and : std_logic;
-   signal op_or : std_logic;
-   signal immediate : std_logic_vector(7 downto 0);
-   signal Write_PC : std_logic;
+   signal alu_decoder : std_logic_vector(3 downto 0);
+   signal ALU_immediate : std_logic_vector(7 downto 0);
+   signal relative_PC : std_logic_vector(15 downto 0);
    signal Address_bus : std_logic_vector(15 downto 0);
    signal Data_bus : std_logic_vector(7 downto 0);
+   signal Write_Enable : std_logic;
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -95,13 +92,12 @@ BEGIN
           manipulate_PC => manipulate_PC,
           reg1 => reg1,
           reg2 => reg2,
-          op_add => op_add,
-          op_sub => op_sub,
-          op_and => op_and,
-          op_or => op_or,
-          immediate => immediate,
+          alu_decoder => alu_decoder,
+          ALU_immediate => ALU_immediate,
+          relative_PC => relative_PC,
           Address_bus => Address_bus,
-          Data_bus => Data_bus
+          Data_bus => Data_bus,
+          Write_Enable => Write_Enable
         );
 
    -- Clock process definitions
@@ -117,20 +113,14 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-		instr_coded <= "1110101000001010";
-		wait for 1.2*clk_period;
-		
-		rst <= '1';
-		wait for 2*clk_period;
-		
-		instr_coded <= "0010000010110000";
-		wait for 2*clk_period;
-		
-		instr_coded <= "0111110011111100";
-		wait for 2*clk_period;
+      -- hold reset state for 100 ns.
+      wait for 100 ns;	
 
+      wait for clk_period*10;
 
-		assert FALSE severity FAILURE;
+      -- insert stimulus here 
+
+      wait;
    end process;
 
 END;
