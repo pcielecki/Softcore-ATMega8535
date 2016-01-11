@@ -21,68 +21,71 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/reg_1x1.vhd";
+static const char *ng0 = "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/mux_2x1.vhd";
 
 
 
-static void work_a_0138931061_1237433641_p_0(char *t0)
+static void work_a_3626575998_2832680351_p_0(char *t0)
 {
-    unsigned char t1;
+    char *t1;
     char *t2;
     unsigned char t3;
-    char *t4;
+    unsigned char t4;
     char *t5;
-    unsigned char t6;
-    unsigned char t7;
+    char *t6;
+    char *t7;
     char *t8;
-    unsigned char t9;
+    char *t9;
     char *t10;
     char *t11;
     char *t12;
     char *t13;
+    char *t14;
+    char *t15;
+    char *t16;
 
-LAB0:    xsi_set_current_line(44, ng0);
-    t2 = (t0 + 660U);
-    t3 = xsi_signal_has_event(t2);
-    if (t3 == 1)
-        goto LAB5;
-
-LAB6:    t1 = (unsigned char)0;
-
-LAB7:    if (t1 != 0)
-        goto LAB2;
+LAB0:    xsi_set_current_line(42, ng0);
+    t1 = (t0 + 776U);
+    t2 = *((char **)t1);
+    t3 = *((unsigned char *)t2);
+    t4 = (t3 == (unsigned char)2);
+    if (t4 != 0)
+        goto LAB3;
 
 LAB4:
-LAB3:    t2 = (t0 + 1724);
-    *((int *)t2) = 1;
+LAB5:    t10 = (t0 + 684U);
+    t11 = *((char **)t10);
+    t10 = (t0 + 1768);
+    t12 = (t10 + 32U);
+    t13 = *((char **)t12);
+    t14 = (t13 + 40U);
+    t15 = *((char **)t14);
+    memcpy(t15, t11, 8U);
+    xsi_driver_first_trans_fast_port(t10);
+
+LAB2:    t16 = (t0 + 1724);
+    *((int *)t16) = 1;
 
 LAB1:    return;
-LAB2:    xsi_set_current_line(45, ng0);
-    t4 = (t0 + 776U);
-    t8 = *((char **)t4);
-    t9 = *((unsigned char *)t8);
-    t4 = (t0 + 1768);
-    t10 = (t4 + 32U);
-    t11 = *((char **)t10);
-    t12 = (t11 + 40U);
-    t13 = *((char **)t12);
-    *((unsigned char *)t13) = t9;
-    xsi_driver_first_trans_fast_port(t4);
-    goto LAB3;
+LAB3:    t1 = (t0 + 592U);
+    t5 = *((char **)t1);
+    t1 = (t0 + 1768);
+    t6 = (t1 + 32U);
+    t7 = *((char **)t6);
+    t8 = (t7 + 40U);
+    t9 = *((char **)t8);
+    memcpy(t9, t5, 8U);
+    xsi_driver_first_trans_fast_port(t1);
+    goto LAB2;
 
-LAB5:    t4 = (t0 + 684U);
-    t5 = *((char **)t4);
-    t6 = *((unsigned char *)t5);
-    t7 = (t6 == (unsigned char)3);
-    t1 = t7;
-    goto LAB7;
+LAB6:    goto LAB2;
 
 }
 
 
-extern void work_a_0138931061_1237433641_init()
+extern void work_a_3626575998_2832680351_init()
 {
-	static char *pe[] = {(void *)work_a_0138931061_1237433641_p_0};
-	xsi_register_didat("work_a_0138931061_1237433641", "isim/CPU_tb_isim_beh.exe.sim/work/a_0138931061_1237433641.didat");
+	static char *pe[] = {(void *)work_a_3626575998_2832680351_p_0};
+	xsi_register_didat("work_a_3626575998_2832680351", "isim/CPU_isim_beh.exe.sim/work/a_3626575998_2832680351.didat");
 	xsi_register_executes(pe);
 }

@@ -42,7 +42,8 @@ entity instruction_decoder is
 			  op_sub : out std_logic;
 			  op_and : out std_logic;
 			  op_or : out std_logic;
-			  immediate:out std_logic_vector(7 downto 0);		  
+			  immediate:out std_logic_vector(7 downto 0);		
+			  relative_PC: out std_logic_vector(15 downto 0);
 			  Address_bus : out std_logic_vector(15 downto 0);
 			  Data_bus : out std_logic_vector(7 downto 0);
 			  Write_Enable : out std_logic);
@@ -63,6 +64,7 @@ architecture Idec_a of instruction_decoder is
 	signal ALU_AND, ALU_OR, ALU_ADD, ALU_SUB	: std_logic;
 	signal last_instr_p1		 	: std_logic_vector(15 downto 0) ;
 	signal write_PC_p1			: std_logic;
+	signal conditional_branch 	: std_logic;
 	
 begin
 
@@ -98,6 +100,11 @@ begin
 	
 	use_immediate_p1 <= 	'1'													when idec_state = FETCH and instr_coded(14) = '1' else
 								'0' 													when idec_state = FETCH;	
+								
+	conditional_branch <= '1'													when idec_state = FETCH and instr_coded(15 downto 12) = "1111" else
+								 '0'													when idec_state = FETCH;
+								 
+	
 	
 	imm_for_alu_p1 <= instr_coded(11 downto 8) & instr_coded(3 downto 0)when idec_state = FETCH;
 			

@@ -1,33 +1,6 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    20:36:53 12/27/2015 
--- Design Name: 
--- Module Name:    CPU - CPU_a 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity CPU is
     Port ( CPU_rst : in  STD_LOGIC;
@@ -118,6 +91,9 @@ architecture CPU_a of CPU is
 	end component reg_1x1;
 	
 	signal prog_clk : std_logic;
+	--signal instruction : std_logic_vector(15 downto 0);
+	signal PC : std_logic;
+	signal write_PC : std_logic;
 	signal immediate : std_logic_vector(7 downto 0);
 	signal Immediate_not_Reg : std_logic;
 	signal Enable_ALU : std_logic;
@@ -152,14 +128,7 @@ begin
 														Data_bus => CPU_Data_bus,
 														Write_Enable => CPU_Write_Enable
 														);
-	--CPU_Immediate_sel_buf : reg_1x1 port map(rst => CPU_rst, clk => CPU_clk, D => immediate_not_reg, Q => mux_imm);
-	
-	--WE_buf				: reg_1x1 port map(rst => CPU_rst, clk => CPU_clk,  D => Write_Not_read, Q => CPU_Write_Enable);
-		
-	--CPU_MAR : reg_1x8 generic map(16) port map(rst => CPU_rst, clk => CPU_clk, D => MAR_in, Q => CPU_Address_bus);
-	
-	--CPU_MDR : reg_1x8 generic map(8) port map(rst => CPU_rst, clk => CPU_clk, D => MDR_in, Q => CPU_Data_bus);
-														
+
 	AVR_gpreg : gp_registerss port map(Addr1 => Addr1_async, 
 													Addr2 => Addr2_async, 
 													Data1 => Data1_async, 
@@ -170,14 +139,14 @@ begin
 													Write_Enable => CPU_Write_Enable,
 													Not_Enable => not Enable_ALU
 													);
-													
-	--ALUr_imm : reg_1x8 generic map(8) port map(rst => CPU_rst, clk => CPU_clk, D => immediate, Q => ALU_immediate);													
-	ALU_mux : mux_2x8 port map(A => Data2_async, B => ALU_immediate, sel => immediate_not_reg, Q => ALU_arg2);
-	
-	
-	--ALUr_arg2 : reg_1x8 generic map(8) port map(rst => CPU_rst, clk => CPU_clk, D => Rr_ALU, Q => ALU_arg2);
-	--Enable_ALU_reg : reg_1x1 port map(rst => CPU_rst, clk => CPU_clk, D => Idec_enable_alu, Q => Enable_ALU);
-	
+																										
+	ALU_mux : mux_2x8 port map(
+										A => Data2_async, 
+										B => ALU_immediate, 
+										sel => immediate_not_reg, 
+										Q => ALU_arg2
+										);
+
 	AVR_ALU : ALU port map(					operand1 => Data1_async, 
 													operand2 => ALU_arg2,
 													result => ALU_result,
