@@ -45,6 +45,7 @@ ARCHITECTURE behavior OF CPU_tb IS
     PORT(
          CPU_rst : IN  std_logic;
          CPU_clk : IN  std_logic;
+			PC_out : out std_logic_vector(15 downto 0);
          instruction : IN  std_logic_vector(15 downto 0);
          CPU_Data_bus : INOUT  std_logic_vector(7 downto 0);
          CPU_Address_bus : INOUT  std_logic_vector(15 downto 0);

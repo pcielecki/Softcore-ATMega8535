@@ -54,7 +54,8 @@ ARCHITECTURE behavior OF idec_test IS
          relative_PC : OUT  std_logic_vector(15 downto 0);
          Address_bus : OUT  std_logic_vector(15 downto 0);
          Data_bus : OUT  std_logic_vector(7 downto 0);
-         Write_Enable : OUT  std_logic
+         Write_Enable : OUT  std_logic;
+			get_next_instr : out std_logic
         );
     END COMPONENT;
     
@@ -76,6 +77,7 @@ ARCHITECTURE behavior OF idec_test IS
    signal Address_bus : std_logic_vector(15 downto 0);
    signal Data_bus : std_logic_vector(7 downto 0);
    signal Write_Enable : std_logic;
+	signal next_instr : std_logic;
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -97,7 +99,8 @@ BEGIN
           relative_PC => relative_PC,
           Address_bus => Address_bus,
           Data_bus => Data_bus,
-          Write_Enable => Write_Enable
+          Write_Enable => Write_Enable,
+			 get_next_instr => next_instr
         );
 
    -- Clock process definitions

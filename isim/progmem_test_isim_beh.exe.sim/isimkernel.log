@@ -2,14 +2,14 @@ Command line:
    progmem_test_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  54988
+     -socket  50790
 
-Sat Jan 09 18:12:04 2016
+Tue Jan 12 00:19:01 2016
 
 
- Elaboration Time: 0.421202 sec
+ Elaboration Time: 0.343203 sec
 
- Current Memory Usage: 674.48 Meg
+ Current Memory Usage: 674.849 Meg
 
  Total Signals          : 11
  Total Nets             : 2099
@@ -27,9 +27,9 @@ In process progmem_test.vhd:stim_proc
  
 
 
- Total Simulation Time: 0.468003 sec
+ Total Simulation Time: 0.390003 sec
 
- Current Memory Usage: 674.48 Meg
+ Current Memory Usage: 674.849 Meg
 
-Sat Jan 09 18:27:55 2016
+Tue Jan 12 00:22:41 2016
 

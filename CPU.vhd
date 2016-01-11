@@ -5,6 +5,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity CPU is
     Port ( CPU_rst : in  STD_LOGIC;
            CPU_clk : in  STD_LOGIC;
+			  PC_out : out std_logic_vector(15 downto 0);
            instruction : in  STD_LOGIC_VECTOR(15 downto 0);
            CPU_Data_bus : inout  STD_LOGIC_VECTOR (7 downto 0);
            CPU_Address_bus : inout  STD_LOGIC_VECTOR (15 downto 0);
@@ -54,7 +55,8 @@ architecture CPU_a of CPU is
 			  relative_PC: out std_logic_vector(15 downto 0);
 			  Address_bus : out std_logic_vector(15 downto 0);
 			  Data_bus : out std_logic_vector(7 downto 0);
-			  Write_Enable : out std_logic);
+			  Write_Enable : out std_logic;
+			  get_next_instr : out std_logic);
 	end component instruction_decoder;
 	
 	component ALU_op_decoder is
@@ -97,6 +99,15 @@ architecture CPU_a of CPU is
            Q : out  STD_LOGIC);
 	end component reg_1x1;
 	
+	component Program_counter is
+    Port ( rst : in  STD_LOGIC;
+           clk : in  STD_LOGIC;
+			  PC_relative : in  STD_LOGIC_VECTOR (15 downto 0);
+           increment : in  STD_LOGIC;
+           PC_out : out  STD_LOGIC_VECTOR (15 downto 0)
+			  );
+	end component Program_counter;
+	
 	signal prog_clk : std_logic;
 	--signal instruction : std_logic_vector(15 downto 0);
 	signal PC : std_logic;
@@ -117,6 +128,7 @@ architecture CPU_a of CPU is
 	signal ALU_immediate: std_logic_vector(7 downto 0);
 	signal ALU_result  : std_logic_vector(7 downto 0);
 	signal status		 : std_logic_vector(7 downto 0);
+	signal fetch_new_instr : std_logic;
 	
 begin
 	AVR_Idec : instruction_decoder port map(rst => CPU_rst, clk => CPU_clk, 
@@ -130,7 +142,8 @@ begin
 														ALU_immediate => ALU_immediate,
 														Address_bus => CPU_Address_bus,
 														Data_bus => CPU_Data_bus,
-														Write_Enable => CPU_Write_Enable
+														Write_Enable => CPU_Write_Enable,
+														get_next_instr => fetch_next_instr
 														);
 
 	ALU_dec : ALU_op_decoder port map (coded_in => ALU_coded_in,
@@ -171,6 +184,9 @@ begin
 													);
 	
 	ALU_acc : reg_8bit_CE port map(rst => CPU_rst, clk => CPU_clk, D => ALU_result, Enable => Enable_ALU, Q => CPU_Data_bus);
+
+	PC: Program_counter(rst => CPU_rst, clk => CPU_clk, PC_relative => "0000000000000000", increment => fetch_next_instr, PC_out => PC); 
+
 
 	prescale: process(CPU_clk, CPU_rst) is
 	variable tog: boolean := FALSE;

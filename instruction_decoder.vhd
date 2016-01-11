@@ -43,7 +43,8 @@ entity instruction_decoder is
 			  relative_PC: out std_logic_vector(15 downto 0);
 			  Address_bus : out std_logic_vector(15 downto 0);
 			  Data_bus : out std_logic_vector(7 downto 0);
-			  Write_Enable : out std_logic);
+			  Write_Enable : out std_logic;
+			  get_next_instr : out std_logic);
 end instruction_decoder;
 
 architecture Idec_a of instruction_decoder is
@@ -61,6 +62,8 @@ begin
 	begin
 		if(rst = '0') then idec_state <= IDLE;
 		elsif(clk'event and clk = '1') then
+			last_state <= idec_state;
+			
 			case idec_state is
 				when IDLE			=>		if(instr_coded = "1111111111111111" or instr_coded = last_instr_p1) 	
 													then 	idec_state <= IDLE;
@@ -82,7 +85,7 @@ begin
 													idec_state <= DMA;
 												end if;
 												
-				when others  		 => 	last_state <= idec_state;idec_state <= MEM_WRITEBACK;
+				when others  		 => 	idec_state <= MEM_WRITEBACK;
 
 			end case;
 		end if;
@@ -122,6 +125,8 @@ begin
 	Data_bus 	<= Data_for_Dbus_p1 when idec_state = MEM_WRITEBACK  and last_state /= ALU_INSTR else (others => 'Z');
 	Write_enable <= '1' when idec_state = MEM_WRITEBACK else '0';
 	--manipulate_PC <= Write_PC_p1 when idec_state = MEM_WRITEBACK;
+	
+	get_next_instr <= '0' when idec_state = MEM_WRITEBACK or idec_state = IDLE else '1';
 	
 	
 end Idec_a;

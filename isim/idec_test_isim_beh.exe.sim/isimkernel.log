@@ -2,34 +2,27 @@ Command line:
    idec_test_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  50610
+     -socket  51117
 
-Mon Jan 11 23:41:44 2016
+Tue Jan 12 00:58:24 2016
 
 
- Elaboration Time: 0.405603 sec
+ Elaboration Time: 0.390003 sec
 
  Current Memory Usage: 673.882 Meg
 
- Total Signals          : 33
- Total Nets             : 126
- Total Signal Drivers   : 18
+ Total Signals          : 35
+ Total Nets             : 127
+ Total Signal Drivers   : 19
  Total Blocks           : 3
  Total Primitive Blocks : 2
- Total Processes        : 14
+ Total Processes        : 15
  Total Traceable Variables  : 9
- Total Scalar Nets and Variables : 487
-Total Line Count : 43
+ Total Scalar Nets and Variables : 488
+Total Line Count : 45
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
 In process idec_test.vhd:stim_proc 
  
-
-
- Total Simulation Time: 0.514803 sec
-
- Current Memory Usage: 673.882 Meg
-
-Mon Jan 11 23:54:28 2016
 
