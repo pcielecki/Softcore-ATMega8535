@@ -104,21 +104,23 @@ BEGIN
 		
 		rst <= '1';
 		instruction <= "1110101000001010"; --LDI R16, 0b10101010
-		wait for 5*clk_period;
+		wait for 2*clk_period;
 		
 		
 		instruction <= "1110000000010111"; --LDI R17, 0b00000111
-		wait for 5*clk_period;
-
+		wait for 2*clk_period;
+		
+		instruction <= "1110000000110111"; --LDI R19, 0b00000111
+		wait for 2*clk_period;
 		
 		instruction <= "0000111100000001";	--ADD R16, R17
-		wait for 5*clk_period;
+		wait for 2*clk_period;
 		
 		instruction <= "1110000000010110"; --LDI R17, 0b00000110
-		wait for 5*clk_period;
+		wait for 2*clk_period;
 		
 		instruction <= "0111110000011100";	--ANDI R17, 0b11001100
-		wait for 5*clk_period;
+		wait for 2*clk_period;
 		
 		instruction <= (others => '1');
 		wait for 6*clk_period;

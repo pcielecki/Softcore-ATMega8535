@@ -62,7 +62,7 @@ begin
 		if(rst = '0') then idec_state <= IDLE;
 		elsif(clk'event and clk = '1') then
 			case idec_state is
-				when IDLE			=>		if(instr_coded = "0000000000000000" or instr_coded = last_instr_p1) 	
+				when IDLE			=>		if(instr_coded = "1111111111111111" or instr_coded = last_instr_p1) 	
 													then 	idec_state <= IDLE;
 												elsif(instr_coded(15) = '0') 					
 													then 	idec_state <= ALU_INSTR;
@@ -72,7 +72,7 @@ begin
 													idec_state <= DMA;
 												end if;
 												
-				when MEM_WRITEBACK =>		if(instr_coded = "0000000000000000" or instr_coded = last_instr_p1) 	
+				when MEM_WRITEBACK =>	if(instr_coded = "1111111111111111" or instr_coded = last_instr_p1) 	
 													then 	idec_state <= IDLE;
 												elsif(instr_coded(15) = '0') 					
 													then 	idec_state <= ALU_INSTR;

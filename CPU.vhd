@@ -49,15 +49,22 @@ architecture CPU_a of CPU is
 			  manipulate_PC : out std_logic;
            reg1 : out  STD_LOGIC_VECTOR (4 downto 0);
            reg2 : out  STD_LOGIC_VECTOR (4 downto 0);
-			  op_add : out std_logic;
-			  op_sub : out std_logic;
-			  op_and : out std_logic;
-			  op_or : out std_logic;
-			  immediate:out std_logic_vector(7 downto 0);		  
+			  alu_decoder : out std_logic_vector(3 downto 0);
+			  ALU_immediate:out std_logic_vector(7 downto 0);		
+			  relative_PC: out std_logic_vector(15 downto 0);
 			  Address_bus : out std_logic_vector(15 downto 0);
 			  Data_bus : out std_logic_vector(7 downto 0);
 			  Write_Enable : out std_logic);
 	end component instruction_decoder;
+	
+	component ALU_op_decoder is
+    Port ( coded_in : in  STD_LOGIC_VECTOR (3 downto 0);
+           op_add : out  STD_LOGIC;
+           op_sub : out  STD_LOGIC;
+           op_and : out  STD_LOGIC;
+           op_or : out  STD_LOGIC
+			  );
+	end component ALU_op_decoder;
 	
 	component mux_2x8 is
     Port ( A : in  STD_LOGIC_VECTOR(7 downto 0);
@@ -97,6 +104,7 @@ architecture CPU_a of CPU is
 	signal immediate : std_logic_vector(7 downto 0);
 	signal Immediate_not_Reg : std_logic;
 	signal Enable_ALU : std_logic;
+	signal ALU_coded_in : std_logic_vector(3 downto 0);
 	signal ALU_add : std_logic;
 	signal ALU_sub : std_logic;
 	signal ALU_and : std_logic;
@@ -109,25 +117,29 @@ architecture CPU_a of CPU is
 	signal ALU_immediate: std_logic_vector(7 downto 0);
 	signal ALU_result  : std_logic_vector(7 downto 0);
 	signal status		 : std_logic_vector(7 downto 0);
-	signal idec_enable_alu: std_logic;
 	
 begin
 	AVR_Idec : instruction_decoder port map(rst => CPU_rst, clk => CPU_clk, 
 														instr_coded => instruction, 
-														ALU_Not_mem => idec_enable_alu,
+														ALU_Not_mem => Enable_ALU,
 														Immediate_Not_reg => Immediate_Not_Reg,
 														manipulate_PC => open,
 														reg1 =>Addr1_async,
 														reg2 =>Addr2_async,
-														op_add => ALU_add,
-														op_sub => ALU_sub,
-														op_and => ALU_and,
-														op_or => ALU_or,
-														immediate => ALU_immediate,
+														ALU_decoder => ALU_coded_in,
+														ALU_immediate => ALU_immediate,
 														Address_bus => CPU_Address_bus,
 														Data_bus => CPU_Data_bus,
 														Write_Enable => CPU_Write_Enable
 														);
+
+	ALU_dec : ALU_op_decoder port map (coded_in => ALU_coded_in,
+													op_add => ALU_add,
+													op_sub => ALU_sub,
+													op_or => ALU_or,
+													op_and => ALU_and
+													);
+
 
 	AVR_gpreg : gp_registerss port map(Addr1 => Addr1_async, 
 													Addr2 => Addr2_async, 
@@ -158,7 +170,7 @@ begin
 													status_out => status
 													);
 	
-	ALU_acc : reg_8bit_CE port map(rst => CPU_rst, clk => CPU_clk, D => ALU_result, Enable => Idec_enable_alu, Q => CPU_Data_bus);
+	ALU_acc : reg_8bit_CE port map(rst => CPU_rst, clk => CPU_clk, D => ALU_result, Enable => Enable_ALU, Q => CPU_Data_bus);
 
 	prescale: process(CPU_clk, CPU_rst) is
 	variable tog: boolean := FALSE;
