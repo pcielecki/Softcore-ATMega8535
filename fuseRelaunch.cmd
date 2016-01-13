@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/idec_test_isim_beh.exe" -prj "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/idec_test_beh.prj" "work.idec_test" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb_isim_beh.exe" -prj "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb_beh.prj" "work.MCU_tb" 

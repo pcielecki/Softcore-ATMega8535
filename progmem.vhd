@@ -30,23 +30,30 @@ use ieee.numeric_std.all;
 --use UNISIM.VComponents.all;
 
 entity progmem is
-    Port ( PC : in  STD_LOGIC_VECTOR (15 downto 0);
-           Instruction : inout  STD_LOGIC_VECTOR (15 downto 0);
-           clk : in  STD_LOGIC;
-           rst : in  STD_LOGIC;
-           progmem_write : in  STD_LOGIC);
+    Port ( 	rst : in  STD_LOGIC;
+				clk : in  STD_LOGIC;
+				PC : in  STD_LOGIC_VECTOR (15 downto 0);
+				Instruction : inout  STD_LOGIC_VECTOR (15 downto 0);
+				progmem_write : in  STD_LOGIC);
 end progmem;
 
 architecture progmem_a of progmem is
-	type mem is array(0 to 128) of std_logic_vector(15 downto 0);
-	signal mem_array : mem;
+	type mem is array(0 to 128) of std_logic_vector(15 downto 0) ;
+	signal mem_array : mem := (others => (others => '1'));
 	
 begin
+	--mem_array(0) <= "1110101000001010";
+	--mem_array(1) <= "1110000000010111";
+	--mem_array(2) <= "1110000000110111";
+	--mem_array(3) <= "0000111100000001";
+	--mem_array(4) <= "1110000000010110";
+	--mem_array(5) <= "0111110000011100";
+
 	flash : process(clk, rst) is
 	begin
-		if(rst = '0') then instruction <= (others => 'Z');
+		if(rst = '0') then instruction <= (others => 'Z'); end if;
 		
-		elsif(clk'event and clk = '1') then
+		if(clk'event and clk = '1') then
 			if(progmem_write = '0' ) then
 				Instruction <= mem_array(	to_integer( unsigned(PC) ) );
 			else

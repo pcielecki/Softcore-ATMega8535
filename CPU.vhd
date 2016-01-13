@@ -68,6 +68,15 @@ architecture CPU_a of CPU is
 			  );
 	end component ALU_op_decoder;
 	
+	component Program_counter is
+    Port ( rst : in  STD_LOGIC;
+           clk : in  STD_LOGIC;
+			  PC_relative : in  STD_LOGIC_VECTOR (15 downto 0);
+           increment : in  STD_LOGIC;
+           PC_out : out  STD_LOGIC_VECTOR (15 downto 0)
+			  );
+	end component Program_counter;
+	
 	component mux_2x8 is
     Port ( A : in  STD_LOGIC_VECTOR(7 downto 0);
            B : in  STD_LOGIC_VECTOR(7 downto 0);
@@ -99,18 +108,11 @@ architecture CPU_a of CPU is
            Q : out  STD_LOGIC);
 	end component reg_1x1;
 	
-	component Program_counter is
-    Port ( rst : in  STD_LOGIC;
-           clk : in  STD_LOGIC;
-			  PC_relative : in  STD_LOGIC_VECTOR (15 downto 0);
-           increment : in  STD_LOGIC;
-           PC_out : out  STD_LOGIC_VECTOR (15 downto 0)
-			  );
-	end component Program_counter;
+
 	
 	signal prog_clk : std_logic;
 	--signal instruction : std_logic_vector(15 downto 0);
-	signal PC : std_logic;
+	--signal PC : std_logic;
 	signal write_PC : std_logic;
 	signal immediate : std_logic_vector(7 downto 0);
 	signal Immediate_not_Reg : std_logic;
@@ -128,11 +130,14 @@ architecture CPU_a of CPU is
 	signal ALU_immediate: std_logic_vector(7 downto 0);
 	signal ALU_result  : std_logic_vector(7 downto 0);
 	signal status		 : std_logic_vector(7 downto 0);
-	signal fetch_new_instr : std_logic;
+	signal fetch_next_instr : std_logic;
+	signal buffered_instr : std_logic_vector(15 downto 0);
 	
 begin
+
+	Instr_reg : reg_1x8  generic map(Nbit => 16) port map(rst => CPU_rst, clk=> CPU_clk, D => instruction, Q=> buffered_instr);
 	AVR_Idec : instruction_decoder port map(rst => CPU_rst, clk => CPU_clk, 
-														instr_coded => instruction, 
+														instr_coded => buffered_instr, 
 														ALU_Not_mem => Enable_ALU,
 														Immediate_Not_reg => Immediate_Not_Reg,
 														manipulate_PC => open,
@@ -185,20 +190,7 @@ begin
 	
 	ALU_acc : reg_8bit_CE port map(rst => CPU_rst, clk => CPU_clk, D => ALU_result, Enable => Enable_ALU, Q => CPU_Data_bus);
 
-	PC: Program_counter(rst => CPU_rst, clk => CPU_clk, PC_relative => "0000000000000000", increment => fetch_next_instr, PC_out => PC); 
-
-
-	prescale: process(CPU_clk, CPU_rst) is
-	variable tog: boolean := FALSE;
-	begin
-		if(CPU_clk'event and CPU_clk = '1') then 
-			if(tog = TRUE) then 
-				prog_clk <= '1';	tog := FALSE;
-			else
-				prog_clk <= '0'; tog := TRUE;
-			end if;
-		end if;
-	end process prescale;
+	prog_ctr: Program_counter port map(rst => CPU_rst, clk => CPU_clk, PC_relative => "0000000000000000", increment => fetch_next_instr, PC_out => PC_out); 
 	
 	CPU_Address_bus <= (others => 'H');
 	CPU_Data_bus <= (others => 'H');

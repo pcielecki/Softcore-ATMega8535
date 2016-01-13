@@ -2,24 +2,24 @@ Command line:
    CPU_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  50782
+     -socket  50332
 
-Tue Jan 12 00:16:17 2016
+Wed Jan 13 20:43:10 2016
 
 
- Elaboration Time: 0.405603 sec
+ Elaboration Time: 0.452402 sec
 
- Current Memory Usage: 674.087 Meg
+ Current Memory Usage: 674.198 Meg
 
- Total Signals          : 86
- Total Nets             : 446
- Total Signal Drivers   : 36
- Total Blocks           : 14
- Total Primitive Blocks : 12
- Total Processes        : 31
+ Total Signals          : 95
+ Total Nets             : 494
+ Total Signal Drivers   : 39
+ Total Blocks           : 15
+ Total Primitive Blocks : 13
+ Total Processes        : 34
  Total Traceable Variables  : 21
- Total Scalar Nets and Variables : 1566
-Total Line Count : 76
+ Total Scalar Nets and Variables : 1614
+Total Line Count : 81
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
@@ -27,9 +27,9 @@ In process CPU_tb.vhd:stim_proc
  
 
 
- Total Simulation Time: 0.405603 sec
+ Total Simulation Time: 0.546003 sec
 
- Current Memory Usage: 674.087 Meg
+ Current Memory Usage: 989.295 Meg
 
-Tue Jan 12 00:18:26 2016
+Wed Jan 13 20:43:44 2016
 

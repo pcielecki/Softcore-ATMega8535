@@ -40,18 +40,15 @@ END CPU_tb;
 ARCHITECTURE behavior OF CPU_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
- 
-    COMPONENT CPU
-    PORT(
-         CPU_rst : IN  std_logic;
-         CPU_clk : IN  std_logic;
-			PC_out : out std_logic_vector(15 downto 0);
-         instruction : IN  std_logic_vector(15 downto 0);
-         CPU_Data_bus : INOUT  std_logic_vector(7 downto 0);
-         CPU_Address_bus : INOUT  std_logic_vector(15 downto 0);
-         CPU_Write_Enable : INOUT  std_logic
-        );
-    END COMPONENT;
+	component CPU is
+		 Port ( CPU_rst : in  STD_LOGIC;
+				  CPU_clk : in  STD_LOGIC;
+				  PC_out : out std_logic_vector(15 downto 0);
+				  instruction : in  STD_LOGIC_VECTOR(15 downto 0);
+				  CPU_Data_bus : inout  STD_LOGIC_VECTOR (7 downto 0);
+				  CPU_Address_bus : inout  STD_LOGIC_VECTOR (15 downto 0);
+				  CPU_Write_Enable : inout std_logic);
+	end component CPU;
     
 
    --Inputs

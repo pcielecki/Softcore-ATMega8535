@@ -1,4 +1,6 @@
+vhdl isim_temp "reg_1x8.vhd"
 vhdl isim_temp "reg_1bit_CE.vhd"
+vhdl isim_temp "Program_counter.vhd"
 vhdl isim_temp "mux_2x1.vhd"
 vhdl isim_temp "instruction_decoder.vhd"
 vhdl isim_temp "gp_registerss.vhd"

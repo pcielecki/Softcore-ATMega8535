@@ -109,9 +109,9 @@ begin
 	Add_for_Addbus_p1 <= "000000000001" & instr_coded(7 downto 4)		when idec_state = ALU_INSTR and instr_coded(13) = '1' else 
 								"00000000000"  & instr_coded(8 downto 4)		when idec_state = ALU_INSTR else
 								"000000000001" & instr_coded(7 downto 4)		when idec_state = DMA		 else
-								"00000000000"  &  instr_coded(8 downto 4) 	when idec_state = IN_OUT and instr_coded(11) = '1'  else
-								"0000000000"   & instr_coded(11 downto 9) & instr_coded(3 downto 0) 
-									when idec_state = IN_OUT;
+								"00000000000"  &  instr_coded(8 downto 4) 	when idec_state = IN_OUT and instr_coded(11) = '1' ;-- else
+								--"0000000000"   & instr_coded(11 downto 9) & instr_coded(3 downto 0) 
+								--	when idec_state = IN_OUT;
 	
 	--DMA--
 	Data_for_DBus_p1 <= instr_coded(11 downto 8) & instr_coded(3 downto 0) when idec_state = DMA;

@@ -1,0 +1,28 @@
+Command line:
+   MCU_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50994
+
+Wed Jan 13 22:33:35 2016
+
+
+ Elaboration Time: 0.374403 sec
+
+ Current Memory Usage: 675.025 Meg
+
+ Total Signals          : 117
+ Total Nets             : 2631
+ Total Signal Drivers   : 46
+ Total Blocks           : 16
+ Total Primitive Blocks : 13
+ Total Processes        : 37
+ Total Traceable Variables  : 17
+ Total Scalar Nets and Variables : 3134
+Total Line Count : 91
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process MCU_tb.vhd:stim_proc 
+ 
+
