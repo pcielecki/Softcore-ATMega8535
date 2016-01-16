@@ -46,8 +46,9 @@ begin
 	begin
 		if(rst = '0') then PC <= (others => '0');
 		elsif(clk'event and clk = '1') then
-			if(PC_relative /= "000000000000000") then PC <= PC + PC_relative; cancel_decoding <= '1';
-			elsif (increment = '1' ) then 					PC <= PC + "0000000000000001"; cancel_decoding <= '0';
+			if (increment = '1' ) then 					PC <= PC + "0000000000000001"	+ PC_relative ; end if;
+			if(PC_relative /= "000000000000000") then cancel_decoding <= '1';
+				else cancel_decoding <= '0';
 			end if;
 		end if;
 	end process counter;

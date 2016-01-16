@@ -20,8 +20,8 @@ Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/AT8535.vhd" i
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 120896 KB
-Fuse CPU Usage: 951 ms
+Fuse Memory Usage: 120936 KB
+Fuse CPU Usage: 904 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package textio
@@ -47,5 +47,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 12 sub-compilation(s) to finish...
 Compiled 34 VHDL Units
 Built simulation executable C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb_isim_beh.exe
-Fuse Memory Usage: 145136 KB
-Fuse CPU Usage: 2340 ms
+Fuse Memory Usage: 146200 KB
+Fuse CPU Usage: 2199 ms

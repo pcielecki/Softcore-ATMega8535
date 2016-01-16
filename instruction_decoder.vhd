@@ -96,8 +96,9 @@ begin
 												end if;
 												
 				when others  		 => 	idec_state <= MEM_WRITEBACK;
-
+			
 			end case;
+			last_instr_p1 <= instr_coded;
 		end if;
 	end process idec_auto;
 	
