@@ -134,7 +134,7 @@ BEGIN
 		end if;
 
 		rst <= '1';
-		wait for 200*clk_period;
+		wait for 75*clk_period;
 		assert FALSE severity FAILURE;
    end process;
 	

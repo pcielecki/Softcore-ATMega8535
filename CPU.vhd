@@ -220,7 +220,7 @@ begin
 																);
 	
 	SREG : reg_1x8 generic map(Nbit => 8) port map(	rst => CPU_rst, 
-																	clk => CPU_clk, 
+																	clk => CPU_Write_Enable, 
 																	D => "000000" & ALU_zero & ALU_carry, 
 																	Q => s_SREG);
 	
