@@ -1,12 +1,13 @@
 <ASSEMBLER_INFO>
  <VERSION>2.1.12</VERSION>
- <DEVICE>Unknown</DEVICE>
+ <DEVICE>ATmega8535</DEVICE>
  <WORKING_DIR>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU</WORKING_DIR>
  <INCLUDE_PATH>
   <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
  </INCLUDE_PATH>
  <SOURCE_FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</SOURCE_FILE>
  <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes\m8535def.inc</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
   <FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.obj</FILE>
@@ -18,7 +19,7 @@
   <FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.map</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <petla><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>4</LINE></petla>
-  <petla2><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>15</LINE></petla2>
+  <petla><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>7</LINE></petla>
+  <petla2><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>18</LINE></petla2>
  </LABELS>
 </ASSEMBLER_INFO>

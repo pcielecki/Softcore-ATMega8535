@@ -19,7 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use ieee.std_logic_unsigned.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -33,7 +33,6 @@ entity instruction_decoder is
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            instr_coded : in  STD_LOGIC_VECTOR (15 downto 0);
-			  --cancel_decoding : in std_logic;	
            ALU_Not_mem : out  STD_LOGIC;
 			  Immediate_Not_reg : out std_logic;
 			  manipulate_PC : out std_logic;
@@ -52,7 +51,7 @@ end instruction_decoder;
 
 architecture Idec_a of instruction_decoder is
 
-	type STATE is (IDLE, ALU_INSTR, DMA, IN_OUT, BRANCH, RJMP,  MEM_WRITEBACK);
+	type STATE is (IDLE, ALU_INSTR, DMA, IO_IN, IO_OUT, BRANCH, RJMP,  MEM_WRITEBACK);
 	signal idec_state, last_state  : STATE := IDLE;
 	
 	signal Add_for_Addbus_p1 	: std_logic_vector(15 downto 0);
@@ -79,6 +78,10 @@ begin
 													then 	idec_state <= BRANCH;
 												elsif(instr_coded(15 downto 12) = "1100") 
 													then idec_state <= RJMP;
+												elsif(instr_coded(15 downto 11) = "10110") 
+													then idec_state <= IO_IN;
+												elsif(instr_coded(15 downto 11) = "10111") 
+													then idec_state <= IO_OUT;
 												else															
 													idec_state <= DMA;
 												end if;
@@ -91,7 +94,11 @@ begin
 													then 	idec_state <= BRANCH;
 												elsif(instr_coded(15 downto 12) = "1100")
 													then idec_state <= RJMP;
-												else															
+												elsif(instr_coded(15 downto 11) = "10110") 
+													then idec_state <= IO_IN;
+												elsif(instr_coded(15 downto 11) = "10111") 
+													then idec_state <= IO_OUT;															
+												else	
 													idec_state <= DMA;
 												end if;
 												
@@ -120,9 +127,9 @@ begin
 	Add_for_Addbus_p1 <= "000000000001" & instr_coded(7 downto 4)		when idec_state = ALU_INSTR and instr_coded(14) = '1' else 
 								"00000000000"  & instr_coded(8 downto 4)		when idec_state = ALU_INSTR else
 								"000000000001" & instr_coded(7 downto 4)		when idec_state = DMA		 else
-								"00000000000"  &  instr_coded(8 downto 4) 	when idec_state = IN_OUT and instr_coded(11) = '1' ;-- else
-								--"0000000000"   & instr_coded(11 downto 9) & instr_coded(3 downto 0) 
-								--	when idec_state = IN_OUT;
+								"00000000000"  &  instr_coded(8 downto 4) 	when idec_state = IO_IN		 else
+								"0000000000"   & instr_coded(10 downto 9) & instr_coded(3 downto 0) + "000000000100000"
+									when idec_state = IO_OUT;
 	
 	--DMA--
 	Data_for_DBus_p1 <= instr_coded(11 downto 8) & instr_coded(3 downto 0) when idec_state = DMA;
@@ -131,8 +138,12 @@ begin
 	--Address_bus <= "0000000000" & instr_coded(8 downto 4) 				when idec_state = IN_OUT and instr_coded(11) = '1' else 
 	--					"0000000000" & instr_coded(11 downto 9) & instr_coded(3 downto 0) when idec_state = IN_OUT;
 		
-	--MEM_WRITEBACK--
-	Address_bus <= Add_for_Addbus_p1 when idec_state = MEM_WRITEBACK else (others => 'Z');
+	--MEM_WRITEBACK--IN_OUT
+	Address_bus <= Add_for_Addbus_p1 when idec_state = MEM_WRITEBACK else 
+					"00000000000"  &  instr_coded(8 downto 4) 	when idec_state = IO_OUT		 else
+					"0000000000"   & instr_coded(10 downto 9) & instr_coded(3 downto 0) + "000000000100000"
+							when idec_state = IO_IN	else
+					(others => 'Z');
 	Data_bus 	<= Data_for_Dbus_p1 when idec_state = MEM_WRITEBACK  and last_state /= ALU_INSTR else (others => 'Z');
 	Write_enable <= '1' when idec_state = MEM_WRITEBACK and (last_state /= RJMP and last_state /= BRANCH) else '0';
 	

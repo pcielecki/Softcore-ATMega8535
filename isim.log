@@ -18,11 +18,38 @@ Finished circuit initialization process.
 at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 32 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 44 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 52 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 66 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 66 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 66 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 78 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 78 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 78 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 90 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 102 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 114 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 126 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 138 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 150 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 162 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 174 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 198 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 210 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 222 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 234 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 246 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 270 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 282 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 294 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 306 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 318 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 342 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 354 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 366 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 378 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 390 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 414 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 426 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 438 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 450 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
@@ -44,11 +71,38 @@ Finished circuit initialization process.
 at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 32 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 44 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 52 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 66 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 66 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 66 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 78 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 78 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 78 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 90 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 102 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 114 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 126 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 138 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 150 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 162 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 174 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 198 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 210 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 222 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 234 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 246 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 270 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 282 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 294 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 306 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 318 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 342 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 354 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 366 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 378 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 390 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 414 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 426 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 438 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 450 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
@@ -70,11 +124,38 @@ Finished circuit initialization process.
 at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 32 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 44 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 52 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 66 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 66 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 66 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 78 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 78 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 78 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 90 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 102 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 114 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 126 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 138 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 150 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 162 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 174 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 198 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 210 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 222 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 234 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 246 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 270 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 282 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 294 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 306 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 318 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 342 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 354 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 366 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 378 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 390 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 414 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 426 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 438 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 450 ns(1), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
@@ -96,11 +177,45 @@ Finished circuit initialization process.
 at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 32 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 44 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
-at 66 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 66 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 52 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
 at 78 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 78 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 90 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 90 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 102 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 102 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 114 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 114 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process MCU_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /mcu_tb/uut/AVR_Core/prog_ctr/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 32 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 52 ns: Error: HREAD Error: Read a ':', expected a Hex character (0-F).
+at 78 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 78 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 90 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 90 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 102 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 102 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 114 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 114 ns(2), Instance /mcu_tb/uut/AVR_Core/AVR_gpreg/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop

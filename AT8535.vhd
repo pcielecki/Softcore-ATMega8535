@@ -59,6 +59,17 @@ architecture at_A of AT8535 is
 				progmem_write : in  STD_LOGIC);
 	end component progmem;
 
+
+
+	component io_port is
+	generic(Base_address : std_logic_vector := "0000000000111001");
+    Port ( 	rst : in std_logic;
+				clk : in std_logic;
+				Address_bus : inout  STD_LOGIC_VECTOR (15 downto 0);
+				Data_bus : inout  STD_LOGIC_VECTOR (7 downto 0);
+				Write_enable : in std_logic;
+				io_pins : inout  STD_LOGIC_VECTOR (7 downto 0));
+	end component io_port;
 	
 	signal s_instruction, s_PC, s_PC_R , s_PC_W: std_logic_vector(15 downto 0) := (others => '0');
 	signal Data_bus : std_logic_vector(7 downto 0);
@@ -98,6 +109,11 @@ begin
 									
 	flash : progmem port map(rst => rst, clk => clk, PC => s_PC, Instruction => s_instruction, progmem_write => progmem_write);
 
-
+	PORTA : io_port generic map("0000000000111001") port map(rst => rst,
+																										clk => clk,
+																										Address_bus => Address_bus,
+																										Data_bus => Data_bus,
+																										Write_Enable => Write_enable,
+																										io_pins => PORT_A);
 end at_A;
 

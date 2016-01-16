@@ -1,6 +1,9 @@
+.include "m8535def.inc"
 LDI R16, 0
 LDI R17, 3
 LDI R18, 4
+OUT DDRA, R18
+OUT PORTA, R18
 petla:	
 SUBI R16, -7
 ANDI R16, 0b00110011
