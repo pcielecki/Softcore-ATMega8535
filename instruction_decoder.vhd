@@ -33,6 +33,7 @@ entity instruction_decoder is
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            instr_coded : in  STD_LOGIC_VECTOR (15 downto 0);
+			  --cancel_decoding : in std_logic;	
            ALU_Not_mem : out  STD_LOGIC;
 			  Immediate_Not_reg : out std_logic;
 			  manipulate_PC : out std_logic;
@@ -41,6 +42,7 @@ entity instruction_decoder is
 			  alu_decoder : out std_logic_vector(3 downto 0);
 			  ALU_immediate:out std_logic_vector(7 downto 0);		
 			  relative_PC: out std_logic_vector(15 downto 0);
+			  branch_code : out std_logic_vector(4 downto 0);
 			  Address_bus : out std_logic_vector(15 downto 0);
 			  Data_bus : out std_logic_vector(7 downto 0);
 			  Write_Enable : out std_logic;
@@ -49,16 +51,19 @@ end instruction_decoder;
 
 architecture Idec_a of instruction_decoder is
 
-	type STATE is (IDLE, ALU_INSTR, DMA, IN_OUT, BRANCH,  MEM_WRITEBACK);
+	type STATE is (IDLE, ALU_INSTR, DMA, IN_OUT, BRANCH, RJMP,  MEM_WRITEBACK);
 	signal idec_state, last_state  : STATE := IDLE;
 	
 	signal Add_for_Addbus_p1 	: std_logic_vector(15 downto 0);
 	signal Data_for_Dbus_p1  	: std_logic_vector(7 downto 0);
 	signal last_instr_p1		 	: std_logic_vector(15 downto 0) ;
+	signal sign_pad_RJMP : std_logic_vector(3 downto 0);
+	signal sign_pad_BRANCH : std_logic_vector(8 downto 0);
 
 begin
 
 	idec_auto: process(clk, rst) is
+
 	begin
 		if(rst = '0') then idec_state <= IDLE;
 		elsif(clk'event and clk = '1') then
@@ -71,6 +76,8 @@ begin
 													then 	idec_state <= ALU_INSTR;
 												elsif(instr_coded(15 downto 12) = "1111" 	)
 													then 	idec_state <= BRANCH;
+												elsif(instr_coded(15 downto 12) = "1100") 
+													then idec_state <= RJMP;
 												else															
 													idec_state <= DMA;
 												end if;
@@ -81,6 +88,8 @@ begin
 													then 	idec_state <= ALU_INSTR;
 												elsif(instr_coded(15 downto 12) = "1111" 	)
 													then 	idec_state <= BRANCH;
+												elsif(instr_coded(15 downto 12) = "1100")
+													then idec_state <= RJMP;
 												else															
 													idec_state <= DMA;
 												end if;
@@ -105,7 +114,7 @@ begin
 	ALU_decoder <= instr_coded(13 downto 10)									when idec_state = ALU_INSTR;
 	
 	
-	--ALU_INSTR or DMA ora IN_OUT--
+	--ALU_INSTR or DMA or IN_OUT--
 	Add_for_Addbus_p1 <= "000000000001" & instr_coded(7 downto 4)		when idec_state = ALU_INSTR and instr_coded(13) = '1' else 
 								"00000000000"  & instr_coded(8 downto 4)		when idec_state = ALU_INSTR else
 								"000000000001" & instr_coded(7 downto 4)		when idec_state = DMA		 else
@@ -123,8 +132,16 @@ begin
 	--MEM_WRITEBACK--
 	Address_bus <= Add_for_Addbus_p1 when idec_state = MEM_WRITEBACK else (others => 'Z');
 	Data_bus 	<= Data_for_Dbus_p1 when idec_state = MEM_WRITEBACK  and last_state /= ALU_INSTR else (others => 'Z');
-	Write_enable <= '1' when idec_state = MEM_WRITEBACK else '0';
-	--manipulate_PC <= Write_PC_p1 when idec_state = MEM_WRITEBACK;
+	Write_enable <= '1' when idec_state = MEM_WRITEBACK and (last_state /= RJMP and last_state /= BRANCH) else '0';
+	
+	--BRANCH OR RJMP
+	sign_pad_RJMP <= "0000" when instr_coded(11) = '0' and idec_state = RJMP else "1111" when idec_state = RJMP;
+	sign_pad_BRANCH <= "111111111" when instr_coded(11) = '0' and idec_state = BRANCH else "000000000" when idec_state = BRANCH;
+	manipulate_PC <= '1' when idec_state = BRANCH or idec_state = RJMP else '0';
+	relative_PC <= sign_pad_RJMP & instr_coded(11 downto 0) when idec_state = RJMP else
+						sign_pad_BRANCH & instr_coded(9 downto 3) when idec_state = BRANCH;
+	branch_code <= instr_coded(11 downto 10) & instr_coded(2 downto 0);
+	
 	
 	get_next_instr <= '0' when idec_state = MEM_WRITEBACK or idec_state = IDLE else '1';
 	

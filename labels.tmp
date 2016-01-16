@@ -18,5 +18,6 @@
   <FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.map</FILE>
  </OUTPUT_FILES>
  <LABELS>
+  <petla><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>3</LINE></petla>
  </LABELS>
 </ASSEMBLER_INFO>

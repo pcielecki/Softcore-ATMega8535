@@ -40,20 +40,18 @@ end Program_counter;
 
 architecture PC_a of Program_counter is
 	signal PC : std_logic_vector(15 downto 0);
-begin
-
-	
-	
+begin	
 	counter: process(clk, rst) is
 	begin
 		if(rst = '0') then PC <= (others => '0');
-		elsif(clk'event and clk = '1' and increment = '1') then		
-			
-			PC <= PC + "0000000000000001" + PC_relative;
+		elsif(clk'event and clk = '1') then
+			if(PC_relative /= "000000000000000") then PC <= PC + PC_relative;
+			elsif (increment = '1' ) then 					PC <= PC + "0000000000000001";
+			end if;
 		end if;
 	end process counter;
 	
-	PC_out <= PC;
+	PC_out <= PC + PC_relative;
 	
 end PC_a;
 

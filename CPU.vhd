@@ -41,8 +41,8 @@ architecture CPU_a of CPU is
            Not_Enable : in  STD_LOGIC);
 	end component gp_registerss;
 	
-	component instruction_decoder is
-    Port ( rst : in  STD_LOGIC;
+   component instruction_decoder is
+		Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            instr_coded : in  STD_LOGIC_VECTOR (15 downto 0);
            ALU_Not_mem : out  STD_LOGIC;
@@ -53,6 +53,7 @@ architecture CPU_a of CPU is
 			  alu_decoder : out std_logic_vector(3 downto 0);
 			  ALU_immediate:out std_logic_vector(7 downto 0);		
 			  relative_PC: out std_logic_vector(15 downto 0);
+			  branch_code : out std_logic_vector(4 downto 0);
 			  Address_bus : out std_logic_vector(15 downto 0);
 			  Data_bus : out std_logic_vector(7 downto 0);
 			  Write_Enable : out std_logic;
@@ -76,6 +77,14 @@ architecture CPU_a of CPU is
            PC_out : out  STD_LOGIC_VECTOR (15 downto 0)
 			  );
 	end component Program_counter;
+	
+	component branch_decoder is
+    Port ( relative_PC : in  STD_LOGIC_VECTOR (15 downto 0);
+           SREG : in  STD_LOGIC_VECTOR (7 downto 0);
+           branch_code : in  STD_LOGIC_VECTOR (4 downto 0);
+           write_PC : in  STD_LOGIC;
+           PC_to_adder : out  STD_LOGIC_VECTOR (15 downto 0));
+	end component branch_decoder;
 	
 	component mux_2x8 is
     Port ( A : in  STD_LOGIC_VECTOR(7 downto 0);
@@ -111,9 +120,10 @@ architecture CPU_a of CPU is
 
 	
 	signal prog_clk : std_logic;
-	--signal instruction : std_logic_vector(15 downto 0);
-	--signal PC : std_logic;
 	signal write_PC : std_logic;
+	signal branch_code : std_logic_vector(4 downto 0);
+	signal relative_PC : std_logic_vector(15 downto 0);
+	signal PC_to_adder : std_logic_vector(15 downto 0);
 	signal immediate : std_logic_vector(7 downto 0);
 	signal Immediate_not_Reg : std_logic;
 	signal Enable_ALU : std_logic;
@@ -140,11 +150,13 @@ begin
 														instr_coded => buffered_instr, 
 														ALU_Not_mem => Enable_ALU,
 														Immediate_Not_reg => Immediate_Not_Reg,
-														manipulate_PC => open,
+														manipulate_PC => write_PC,
 														reg1 =>Addr1_async,
 														reg2 =>Addr2_async,
 														ALU_decoder => ALU_coded_in,
 														ALU_immediate => ALU_immediate,
+														relative_PC => relative_PC,
+														branch_code => branch_code,
 														Address_bus => CPU_Address_bus,
 														Data_bus => CPU_Data_bus,
 														Write_Enable => CPU_Write_Enable,
@@ -190,7 +202,10 @@ begin
 	
 	ALU_acc : reg_8bit_CE port map(rst => CPU_rst, clk => CPU_clk, D => ALU_result, Enable => Enable_ALU, Q => CPU_Data_bus);
 
-	prog_ctr: Program_counter port map(rst => CPU_rst, clk => CPU_clk, PC_relative => "0000000000000000", increment => fetch_next_instr, PC_out => PC_out); 
+	prog_ctr: Program_counter port map(rst => CPU_rst, clk => CPU_clk, PC_relative => PC_to_adder, increment => fetch_next_instr, PC_out => PC_out); 
+	
+	AVR_branch_decoder: branch_decoder port map(relative_PC => relative_PC, SREG => "00000010", branch_code => branch_code, write_PC => write_PC, PC_to_adder => PC_to_adder);
+	
 	
 	CPU_Address_bus <= (others => 'H');
 	CPU_Data_bus <= (others => 'H');

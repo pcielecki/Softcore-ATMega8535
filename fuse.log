@@ -9,17 +9,18 @@ Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/Program_count
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/mux_2x1.vhd" into library work
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/instruction_decoder.vhd" into library work
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/gp_registerss.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/branch_decoder.vhd" into library work
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/ALU_op_decoder.vhd" into library work
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/ALU.vhd" into library work
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/progmem.vhd" into library work
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd" into library work
-WARNING:HDLCompiler:946 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd" Line 170: Actual for formal port not_enable is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd" Line 182: Actual for formal port not_enable is neither a static name nor a globally static expression
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/AT8535.vhd" into library work
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 120456 KB
-Fuse CPU Usage: 873 ms
+Fuse Memory Usage: 120936 KB
+Fuse CPU Usage: 810 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package textio
@@ -35,13 +36,14 @@ Compiling architecture mux_a of entity mux_2x8 [mux_2x8_default]
 Compiling architecture alu_a of entity ALU [alu_default]
 Compiling architecture reg_8bit_ce_a of entity reg_8bit_CE [reg_8bit_ce_default]
 Compiling architecture pc_a of entity Program_counter [program_counter_default]
+Compiling architecture bd_a7 of entity branch_decoder [branch_decoder_default]
 Compiling architecture cpu_a of entity CPU [cpu_default]
 Compiling architecture progmem_a of entity progmem [progmem_default]
 Compiling architecture at_a of entity AT8535 [at8535_default]
 Compiling architecture behavior of entity mcu_tb
 Time Resolution for simulation is 1ps.
-Waiting for 10 sub-compilation(s) to finish...
-Compiled 30 VHDL Units
+Waiting for 11 sub-compilation(s) to finish...
+Compiled 32 VHDL Units
 Built simulation executable C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb_isim_beh.exe
-Fuse Memory Usage: 145720 KB
-Fuse CPU Usage: 1934 ms
+Fuse Memory Usage: 145176 KB
+Fuse CPU Usage: 1918 ms
