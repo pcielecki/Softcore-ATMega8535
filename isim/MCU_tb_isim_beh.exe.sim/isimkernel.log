@@ -2,14 +2,14 @@ Command line:
    MCU_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  52754
+     -socket  52807
 
-Sat Jan 16 18:59:43 2016
+Sat Jan 16 19:11:01 2016
 
 
- Elaboration Time: 0.390002 sec
+ Elaboration Time: 0.452402 sec
 
- Current Memory Usage: 675.176 Meg
+ Current Memory Usage: 674.415 Meg
 
  Total Signals          : 141
  Total Nets             : 2688
