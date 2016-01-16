@@ -1,6 +1,6 @@
 
-AVRASM ver. 2.1.12  C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm Sat Jan 16 18:19:02 2016
+AVRASM ver. 2.1.12  C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm Sat Jan 16 23:05:14 2016
 
 
 CSEG petla        00000003
-CSEG petla2       00000006
+CSEG petla2       0000000a

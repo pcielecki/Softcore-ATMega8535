@@ -146,7 +146,7 @@ begin
 
 	Instr_reg : reg_1x8  generic map(Nbit => 16) port map(rst => CPU_rst, clk=> CPU_clk, D => instruction, Q=> buffered_instr);
 	AVR_Idec : instruction_decoder port map(rst => CPU_rst, clk => CPU_clk, 
-														instr_coded => buffered_instr, 
+														instr_coded => Instruction, 
 														ALU_Not_mem => Enable_ALU,
 														Immediate_Not_reg => Immediate_Not_Reg,
 														manipulate_PC => write_PC,

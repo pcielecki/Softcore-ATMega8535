@@ -126,13 +126,15 @@ BEGIN
 					s_instruction <= instruction;
 					wait for 1*clk_period;
 				end loop;
-			
-			request_read := FALSE;
-			progmem_write <= '0';
+
 		
 			end loop;
 		end if;
 
+
+					
+		request_read := FALSE;
+		progmem_write <= '0';
 		rst <= '1';
 		wait for 75*clk_period;
 		assert FALSE severity FAILURE;
