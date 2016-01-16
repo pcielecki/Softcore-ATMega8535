@@ -18,13 +18,15 @@ Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/AT8535.vhd" i
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 120560 KB
-Fuse CPU Usage: 763 ms
+Fuse Memory Usage: 120456 KB
+Fuse CPU Usage: 873 ms
 Compiling package standard
 Compiling package std_logic_1164
+Compiling package textio
+Compiling package std_logic_textio
+Compiling package numeric_std
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling package numeric_std
 Compiling architecture reg_1x8_a of entity reg_1x8 [\reg_1x8(16)\]
 Compiling architecture idec_a of entity instruction_decoder [instruction_decoder_default]
 Compiling architecture alu_o_d_a of entity ALU_op_decoder [alu_op_decoder_default]
@@ -38,8 +40,8 @@ Compiling architecture progmem_a of entity progmem [progmem_default]
 Compiling architecture at_a of entity AT8535 [at8535_default]
 Compiling architecture behavior of entity mcu_tb
 Time Resolution for simulation is 1ps.
-Waiting for 9 sub-compilation(s) to finish...
-Compiled 28 VHDL Units
+Waiting for 10 sub-compilation(s) to finish...
+Compiled 30 VHDL Units
 Built simulation executable C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb_isim_beh.exe
-Fuse Memory Usage: 140448 KB
-Fuse CPU Usage: 1746 ms
+Fuse Memory Usage: 145720 KB
+Fuse CPU Usage: 1934 ms

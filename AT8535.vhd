@@ -60,7 +60,7 @@ architecture at_A of AT8535 is
 	end component progmem;
 
 	
-	signal s_instruction, s_PC, s_PC_R , s_PC_W: std_logic_vector(15 downto 0);
+	signal s_instruction, s_PC, s_PC_R , s_PC_W: std_logic_vector(15 downto 0) := (others => '0');
 	signal Data_bus : std_logic_vector(7 downto 0);
 	signal Address_bus : std_logic_vector(15 downto 0);
 	signal Write_Enable : std_logic;

@@ -27,8 +27,7 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-USE std.textio.all;
-USE ieee.std_logic_textio.all;
+
  
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -96,8 +95,6 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-		request_read := TRUE;
-	
 		wait for 1.2*clk_period;
 		
 		rst <= '1';
@@ -128,24 +125,6 @@ BEGIN
 
 		assert FALSE severity FAILURE;
    end process;
-	
-	read_hex : process(clk) is
-		file infile : text is in "for_vhdl.hex";
-		variable inline : line;
-		variable hex : std_logic_vector(3 downto 0);
-		variable instruction : std_logic_vector(15 downto 0);
 
-	begin
-		if(request_read = TRUE) then
-		readline(infile, inline);
-			for I in 4 downto 1 loop
-				
-				hread(inline, hex);
-				instruction(4*I-1 downto 4*I-4) := hex;
-			end loop;
-			
-			request_read := FALSE;
-		end if;
-	end process read_hex;
 
 END;

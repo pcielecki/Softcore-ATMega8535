@@ -1,0 +1,22 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.12</VERSION>
+ <DEVICE>Unknown</DEVICE>
+ <WORKING_DIR>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+ </LABELS>
+</ASSEMBLER_INFO>
