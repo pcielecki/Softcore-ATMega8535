@@ -136,7 +136,7 @@ BEGIN
 		request_read := FALSE;
 		progmem_write <= '0';
 		rst <= '1';
-		wait for 75*clk_period;
+		wait for 100*clk_period;
 		assert FALSE severity FAILURE;
    end process;
 	

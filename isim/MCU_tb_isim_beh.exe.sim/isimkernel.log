@@ -2,14 +2,14 @@ Command line:
    MCU_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  49722
+     -socket  49801
 
-Sat Jan 16 22:58:12 2016
+Sat Jan 16 23:11:36 2016
 
 
- Elaboration Time: 0.374403 sec
+ Elaboration Time: 0.468002 sec
 
- Current Memory Usage: 674.972 Meg
+ Current Memory Usage: 675.013 Meg
 
  Total Signals          : 141
  Total Nets             : 2688
@@ -27,9 +27,9 @@ In process MCU_tb.vhd:stim_proc
  
 
 
- Total Simulation Time: 3.38522 sec
+ Total Simulation Time: 1.70041 sec
 
- Current Memory Usage: 674.972 Meg
+ Current Memory Usage: 832.561 Meg
 
-Sat Jan 16 23:03:26 2016
+Sat Jan 16 23:13:41 2016
 
