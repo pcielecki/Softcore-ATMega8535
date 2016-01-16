@@ -34,26 +34,26 @@ entity ALU is
     Port ( operand1 : in  STD_LOGIC_VECTOR (7 downto 0);
            operand2 : in  STD_LOGIC_VECTOR (7 downto 0);
 			  result : out std_logic_vector(7 downto 0);
-           op_and : in std_logic;
-			  op_or : in std_logic;
-			  op_add : in std_logic;
-			  op_sub : in std_logic;
-           status_in : in  STD_LOGIC_VECTOR (7 downto 0);
-           status_out : out  STD_LOGIC_VECTOR (7 downto 0)
+           op_and, op_or, op_add, op_sub : in std_logic;
+			  zero, carry : out std_logic
 );
 end ALU;
 
 architecture ALU_a of ALU is
-
+	signal op1, op2, res : std_logic_vector(8 downto 0);
 begin
-		status_out <= (others => '0');
-		
-		result <= operand1 + operand2 when op_add = '1' else
-					 operand1 - operand2 when op_sub = '1' else
-					 operand1 and operand2 when op_and = '1' else
-					 operand1 or operand2 when op_or = '1' else
-					 operand1 					;
+		op1 <= operand1(7) & operand1;
+		op2 <= operand2(7) & operand2;
+				
+		res <= op1 + op2 when op_add = '1' else
+					 op1 - op2 when op_sub = '1' else
+					 op1 and op2 when op_and = '1' else
+					 op1 or op2 when op_or = '1' else
+					 op1;
 
-		
+		carry <= res(8);
+		zero <= '1' when res = "000000000" else '0';
+
+		result <= res(7 downto 0);
 end architecture ALU_a;
 

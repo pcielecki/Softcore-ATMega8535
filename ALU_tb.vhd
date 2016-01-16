@@ -90,7 +90,7 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-	operand1 <= "01010101";
+	operand1 <= "00000001";
 	operand2 <= "00000001";
 	wait for 1 ns;
 	
@@ -98,7 +98,7 @@ BEGIN
 	wait for 1 ns;
 	
 	op_or <= '0';
-	op_add <= '1';
+	op_sub <= '1';
 	wait for 1 ns;
 	
 	assert FALSE severity FAILURE;

@@ -62,7 +62,7 @@ ARCHITECTURE behavior OF MCU_tb IS
    signal port_A : std_logic_vector(7 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 4 ns;
 	
 	-- variables
 	shared variable request_read : boolean := FALSE;
@@ -134,7 +134,7 @@ BEGIN
 		end if;
 
 		rst <= '1';
-		wait for 50*clk_period;
+		wait for 200*clk_period;
 		assert FALSE severity FAILURE;
    end process;
 	

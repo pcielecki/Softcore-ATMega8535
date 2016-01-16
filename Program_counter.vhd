@@ -34,7 +34,8 @@ entity Program_counter is
            clk : in  STD_LOGIC;
 			  PC_relative : in  STD_LOGIC_VECTOR (15 downto 0);
            increment : in  STD_LOGIC;
-           PC_out : out  STD_LOGIC_VECTOR (15 downto 0)
+           PC_out : out  STD_LOGIC_VECTOR (15 downto 0);
+			  cancel_decoding : out std_logic
 			  );
 end Program_counter;
 
@@ -45,8 +46,8 @@ begin
 	begin
 		if(rst = '0') then PC <= (others => '0');
 		elsif(clk'event and clk = '1') then
-			if(PC_relative /= "000000000000000") then PC <= PC + PC_relative;
-			elsif (increment = '1' ) then 					PC <= PC + "0000000000000001";
+			if(PC_relative /= "000000000000000") then PC <= PC + PC_relative; cancel_decoding <= '1';
+			elsif (increment = '1' ) then 					PC <= PC + "0000000000000001"; cancel_decoding <= '0';
 			end if;
 		end if;
 	end process counter;

@@ -46,7 +46,8 @@ entity instruction_decoder is
 			  Address_bus : out std_logic_vector(15 downto 0);
 			  Data_bus : out std_logic_vector(7 downto 0);
 			  Write_Enable : out std_logic;
-			  get_next_instr : out std_logic);
+			  get_next_instr : out std_logic;
+			  cancel_decoding : in std_logic);
 end instruction_decoder;
 
 architecture Idec_a of instruction_decoder is
@@ -65,7 +66,7 @@ begin
 	idec_auto: process(clk, rst) is
 
 	begin
-		if(rst = '0') then idec_state <= IDLE;
+		if(rst = '0' or cancel_decoding = '1') then idec_state <= IDLE;
 		elsif(clk'event and clk = '1') then
 			last_state <= idec_state;
 			
@@ -115,7 +116,7 @@ begin
 	
 	
 	--ALU_INSTR or DMA or IN_OUT--
-	Add_for_Addbus_p1 <= "000000000001" & instr_coded(7 downto 4)		when idec_state = ALU_INSTR and instr_coded(13) = '1' else 
+	Add_for_Addbus_p1 <= "000000000001" & instr_coded(7 downto 4)		when idec_state = ALU_INSTR and instr_coded(14) = '1' else 
 								"00000000000"  & instr_coded(8 downto 4)		when idec_state = ALU_INSTR else
 								"000000000001" & instr_coded(7 downto 4)		when idec_state = DMA		 else
 								"00000000000"  &  instr_coded(8 downto 4) 	when idec_state = IN_OUT and instr_coded(11) = '1' ;-- else

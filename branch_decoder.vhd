@@ -34,7 +34,8 @@ entity branch_decoder is
            SREG : in  STD_LOGIC_VECTOR (7 downto 0);
            branch_code : in  STD_LOGIC_VECTOR (4 downto 0);
            write_PC : in  STD_LOGIC;
-           PC_to_adder : out  STD_LOGIC_VECTOR (15 downto 0));
+           PC_to_adder : out  STD_LOGIC_VECTOR (15 downto 0) 
+			  );
 end branch_decoder;
 
 architecture bd_a7 of branch_decoder is	
@@ -49,8 +50,9 @@ begin
 	
 	with branch_code select
 		execute_jmp(0) <= '1' 			when "11100",	--RJMP
-								not SREG(1) when "00001",
-								SREG(1)		when "01001",
+								SREG(1) 		when "00001",
+								not SREG(1)	when "01001",
 								'0'			when others;
+								
 end bd_a7;
 
