@@ -41,6 +41,18 @@ end io_port;
 
 architecture iop_a of io_port is
 	signal PORTX, PINX, DDRX : std_logic_vector(7 downto 0) := (others => '0');
+	
+		component pull_up is
+    Port (  EN : in  STD_LOGIC;
+				Q : out  STD_LOGIC);
+		end component pull_up;
+			
+		component tri_state_buffer is
+			Port ( D : in std_logic;
+			EN : in  STD_LOGIC;
+           Q : out  STD_LOGIC);
+		end component tri_state_buffer;
+		
 begin
 		iop: process(clk, rst) is
 		begin
@@ -52,19 +64,29 @@ begin
 						else Data_bus <= PINX;	 end if;
 					
 					when (Base_address + "0000000000000001") =>
-						if(Write_Enable = '1') then PORTX <= Data_bus;
-						else Data_bus <= PORTX; end if;
+						if(Write_Enable = '1') then DDRX <= Data_bus;
+						else Data_bus <= DDRX; end if;
 						
 					when (Base_address + "0000000000000010") =>
-						if(Write_Enable = '1') then DDRX <= Data_bus;
-						else Data_bus <= DDRX; 	end if;
+						if(Write_Enable = '1') then PORTX <= Data_bus;
+						else Data_bus <= PORTX; 	end if;
 					when others => Data_bus <= (others => 'Z'); Address_bus <= (others => 'Z');
 				end case;
 			end if;
 		end process iop;	
+
 		
+		--PULL_UPS:
+			--for I in 7 downto 0 generate
+				--PORTX_PULLUP : pull_up port map( EN => PORTX(I), Q => io_pins(I));
+			--end generate PULL_UPS;
+		
+		
+		TRI_STATE_BUFFERS:
+			for I in 7 downto 0 generate
+				PORTX_TSB : tri_state_buffer port map(D => PORTX(I), EN => DDRX(I), Q => io_pins(I));
+			end generate TRI_STATE_BUFFERS;
 		
 		PINX <= io_pins;
-		io_pins(2) <= PORTX(2) when DDRX(2) = '1' else 'Z';
 end iop_a;
 

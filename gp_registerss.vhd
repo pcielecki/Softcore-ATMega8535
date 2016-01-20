@@ -54,10 +54,11 @@ begin
 		if(rst = '0') then Address_bus <= (others => 'Z'); Data_bus <= (others => 'Z'); mem_array <= (others => "00000000");
 		Data_bus <= (others => 'Z'); Address_bus <= (others => 'Z');
 		elsif(clk'event and clk = '1') then
-			if(Write_Enable = '1' ) then
+			if(Write_Enable = '1' and Address_bus(15 downto 5) = "00000000000") then
 				mem_array(	to_integer(	unsigned(Address_bus(4 downto 0)))	) <= Data_bus;
-			elsif(Write_Enable = '0' and Address_bus(15 downto 5) = ("00000000000")) then
-				--Data_bus <= mem_array(	to_integer(	unsigned(Address_bus(4 downto 0))) );
+			elsif(Address_bus(15 downto 5) = ("00000000000")) then
+				Data_bus <= mem_array(	to_integer(	unsigned(Address_bus(4 downto 0))) );
+			else Data_bus <= (others => 'Z');
 
 			end if;
 		end if;

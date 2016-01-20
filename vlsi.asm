@@ -1,19 +1,25 @@
 .include "m8535def.inc"
-LDI R16, 0
-LDI R17, 3
-LDI R18, 4
-OUT DDRA, R18
-OUT PORTA, R18
-petla:	
-SUBI R16, -7
-ANDI R16, 0b00110011
-ADD R17, R18
-LDI R16, 0
 
-SUBI R18, 1
+.EQU LED_PORT = PORTA
+.EQU LED_DDR  = DDRA
+.DEF CTR 	  = R16
+.DEF TEMP	  = R17
 
-BRNE petla
+.org $00
+RJMP main
 
-LDI R18, $ff
-petla2:	
-	RJMP petla2
+main:
+	LDI TEMP, 0b01111111
+	OUT LED_DDR, TEMP
+
+	LDI R16, 10
+	
+	petla:
+	 	OUT LED_PORT, R16
+		SUBI R16, 1
+		BRNE petla
+	
+	LDI R16, $7F
+	OUT LED_PORT, R16
+	petla_glowna:
+		RJMP petla_glowna

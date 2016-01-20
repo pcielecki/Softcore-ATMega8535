@@ -34,7 +34,7 @@ entity ALU is
     Port ( operand1 : in  STD_LOGIC_VECTOR (7 downto 0);
            operand2 : in  STD_LOGIC_VECTOR (7 downto 0);
 			  result : out std_logic_vector(7 downto 0);
-           op_and, op_or, op_add, op_sub : in std_logic;
+           op_and, op_or, op_add, op_sub, op_eor: in std_logic;
 			  zero, carry : out std_logic
 );
 end ALU;
@@ -49,6 +49,7 @@ begin
 					 op1 - op2 when op_sub = '1' else
 					 op1 and op2 when op_and = '1' else
 					 op1 or op2 when op_or = '1' else
+					 op1 xor op2 when op_or = '1' else
 					 op1;
 
 		carry <= res(8);

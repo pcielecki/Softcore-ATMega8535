@@ -1,3 +1,4 @@
+vhdl work "tri_state_buffer.vhd"
 vhdl work "reg_1x8.vhd"
 vhdl work "reg_1bit_CE.vhd"
 vhdl work "Program_counter.vhd"

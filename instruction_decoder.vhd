@@ -144,7 +144,7 @@ begin
 					"0000000000"   & instr_coded(10 downto 9) & instr_coded(3 downto 0) + "000000000100000"
 							when idec_state = IO_IN	else
 					(others => 'Z');
-	Data_bus 	<= Data_for_Dbus_p1 when idec_state = MEM_WRITEBACK  and last_state /= ALU_INSTR else (others => 'Z');
+	Data_bus 	<= Data_for_Dbus_p1 when idec_state = MEM_WRITEBACK  and last_state /= ALU_INSTR and last_state /= IO_OUT else (others => 'Z');
 	Write_enable <= '1' when idec_state = MEM_WRITEBACK and (last_state /= RJMP and last_state /= BRANCH) else '0';
 	
 	--BRANCH OR RJMP

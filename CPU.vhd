@@ -18,7 +18,7 @@ architecture CPU_a of CPU is
     Port ( operand1 : in  STD_LOGIC_VECTOR (7 downto 0);
            operand2 : in  STD_LOGIC_VECTOR (7 downto 0);
 			  result : out std_logic_vector(7 downto 0);
-           op_and, op_or, op_add, op_sub : in std_logic;
+           op_and, op_or, op_add, op_sub, op_eor : in std_logic;
 			  zero, carry : out std_logic
 		);
 	end component ALU;
@@ -128,7 +128,7 @@ architecture CPU_a of CPU is
 	signal Immediate_not_Reg : std_logic;
 	signal Enable_ALU : std_logic;
 	signal ALU_coded_in : std_logic_vector(3 downto 0);
-	signal ALU_add, ALU_sub, ALU_and, ALU_or : std_logic;
+	signal ALU_add, ALU_sub, ALU_and, ALU_or, ALU_eor : std_logic;
 	signal ALU_zero, ALU_carry : std_logic;
 	signal s_SREG : std_logic_vector(7 downto 0);
 	signal Addr1_async : std_logic_vector(4 downto 0);
@@ -167,7 +167,8 @@ begin
 													op_add => ALU_add,
 													op_sub => ALU_sub,
 													op_or => ALU_or,
-													op_and => ALU_and
+													op_and => ALU_and,
+													op_eor => ALU_eor
 													);
 
 
@@ -196,6 +197,7 @@ begin
 													op_or => ALU_or,
 													op_add => ALU_add,
 													op_sub => ALU_sub,
+													op_eor => ALU_eor,
 													zero => ALU_zero,
 													carry => ALU_carry
 													);

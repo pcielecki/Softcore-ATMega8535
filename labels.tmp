@@ -19,7 +19,8 @@
   <FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.map</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <petla><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>7</LINE></petla>
-  <petla2><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>18</LINE></petla2>
+  <main><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>11</LINE></main>
+  <petla><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>17</LINE></petla>
+  <petla_glowna><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>24</LINE></petla_glowna>
  </LABELS>
 </ASSEMBLER_INFO>

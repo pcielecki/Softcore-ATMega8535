@@ -34,7 +34,8 @@ entity ALU_op_decoder is
            op_add : out  STD_LOGIC;
            op_sub : out  STD_LOGIC;
            op_and : out  STD_LOGIC;
-           op_or : out  STD_LOGIC
+           op_or : out  STD_LOGIC;
+			  op_eor : out STD_Logic
 			  );
 end ALU_op_decoder;
 
@@ -42,6 +43,7 @@ architecture ALU_o_d_a of ALU_op_decoder is
 begin
 	
 	op_and <= '1' when(coded_in(3 downto 0) = "1000" or coded_in(3 downto 2) = "11") else '0';
+	op_eor <= '1' when(coded_in(3 downto 0) = "1001") else '0';
 	op_or  <= '1' when coded_in(3 downto 2) = "10"  	else '0';
 	op_add <= '1' when coded_in(3 downto 0) = "0011" 	else '0' ;
 	op_sub <= '1' when coded_in(3 downto 2) = "01"	else '0' ;

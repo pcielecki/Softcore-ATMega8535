@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.12  C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm Sun Jan 17 00:08:11 2016
+AVRASM ver. 2.1.12  C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm Mon Jan 18 14:14:59 2016
 
 
 EQU  SIGNATURE_000 0000001e
@@ -591,5 +591,10 @@ EQU  INT2addr     00000012
 EQU  OC0addr      00000013
 EQU  SPMRaddr     00000014
 EQU  INT_VECTORS_SIZE 00000015
-CSEG petla        00000005
-CSEG petla2       0000000c
+EQU  LED_PORT     0000001b
+EQU  LED_DDR      0000001a
+DEF  CTR          r16
+DEF  TEMP         r17
+CSEG main         00000001
+CSEG petla        00000004
+CSEG petla_glowna 00000009
