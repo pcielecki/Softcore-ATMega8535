@@ -67,7 +67,7 @@ LAB2:    xsi_set_current_line(45, ng0);
     t1 = xsi_get_transient_memory(8U);
     memset(t1, 0, 8U);
     t5 = t1;
-    memset(t5, (unsigned char)4, 8U);
+    memset(t5, (unsigned char)2, 8U);
     t6 = (t0 + 1836);
     t7 = (t6 + 32U);
     t8 = *((char **)t7);

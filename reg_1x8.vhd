@@ -1,22 +1,8 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    12:01:26 12/29/2015 
--- Design Name: 
--- Module Name:    reg_1x8 - reg_1x8_a 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
+-- Autor:				Piotr Cielecki 
+-- Tytu³ projektu:	Mikrokontroler ATMega8535
+-- Termin zajêæ		Poniedzia³ek, 15.15
+-- Data: 				24. stycznia 2016
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -42,7 +28,7 @@ architecture reg_1x8_a of reg_1x8 is
 begin
 	regproc : process(clk, rst) is
 	begin
-		if(rst = '0') then Q <= (others => 'Z');
+		if(rst = '0') then Q <= (others => '0');
 		elsif(clk'event and clk = '1') then
 			Q <= D;
 		end if;

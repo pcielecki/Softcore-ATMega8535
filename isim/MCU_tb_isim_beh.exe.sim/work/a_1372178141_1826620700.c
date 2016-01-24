@@ -27,7 +27,7 @@ extern char *IEEE_P_3620187407;
 char *ieee_p_3620187407_sub_767668596_3965413181(char *, char *, char *, char *, char *, char *);
 
 
-static void work_a_0153131062_1826620700_p_0(char *t0)
+static void work_a_1372178141_1826620700_p_0(char *t0)
 {
     char t14[16];
     char t17[16];
@@ -326,7 +326,7 @@ LAB25:    xsi_set_current_line(71, ng0);
 
 }
 
-static void work_a_0153131062_1826620700_p_1(char *t0)
+static void work_a_1372178141_1826620700_p_1(char *t0)
 {
     char *t1;
     char *t2;
@@ -357,9 +357,9 @@ LAB4:    goto LAB2;
 }
 
 
-extern void work_a_0153131062_1826620700_init()
+extern void work_a_1372178141_1826620700_init()
 {
-	static char *pe[] = {(void *)work_a_0153131062_1826620700_p_0,(void *)work_a_0153131062_1826620700_p_1};
-	xsi_register_didat("work_a_0153131062_1826620700", "isim/MCU_tb_isim_beh.exe.sim/work/a_0153131062_1826620700.didat");
+	static char *pe[] = {(void *)work_a_1372178141_1826620700_p_0,(void *)work_a_1372178141_1826620700_p_1};
+	xsi_register_didat("work_a_1372178141_1826620700", "isim/MCU_tb_isim_beh.exe.sim/work/a_1372178141_1826620700.didat");
 	xsi_register_executes(pe);
 }

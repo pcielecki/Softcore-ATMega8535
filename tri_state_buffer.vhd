@@ -1,21 +1,7 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    13:57:20 01/18/2016 
--- Design Name: 
--- Module Name:    tri_state_buffer - tsb_a 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- Autor:				Piotr Cielecki 
+-- Tytu³ projektu:	Mikrokontroler ATMega8535
+-- Termin zajêæ		Poniedzia³ek, 15.15
+-- Data: 				24. stycznia 2016
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

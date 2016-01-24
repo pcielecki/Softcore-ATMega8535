@@ -53,7 +53,7 @@ static void work_a_3742017542_4038663270_p_0(char *t0)
     char *t22;
     char *t23;
 
-LAB0:    xsi_set_current_line(54, ng0);
+LAB0:    xsi_set_current_line(47, ng0);
     t1 = (t0 + 592U);
     t2 = *((char **)t1);
     t3 = *((unsigned char *)t2);
@@ -62,7 +62,7 @@ LAB0:    xsi_set_current_line(54, ng0);
         goto LAB2;
 
 LAB4:
-LAB3:    xsi_set_current_line(56, ng0);
+LAB3:    xsi_set_current_line(49, ng0);
     t1 = (t0 + 660U);
     t4 = xsi_signal_has_event(t1);
     if (t4 == 1)
@@ -78,7 +78,7 @@ LAB6:    t1 = (t0 + 1908);
     *((int *)t1) = 1;
 
 LAB1:    return;
-LAB2:    xsi_set_current_line(54, ng0);
+LAB2:    xsi_set_current_line(47, ng0);
     t1 = xsi_get_transient_memory(16U);
     memset(t1, 0, 16U);
     t5 = t1;
@@ -92,7 +92,7 @@ LAB2:    xsi_set_current_line(54, ng0);
     xsi_driver_first_trans_fast_port(t6);
     goto LAB3;
 
-LAB5:    xsi_set_current_line(57, ng0);
+LAB5:    xsi_set_current_line(50, ng0);
     t2 = (t0 + 960U);
     t6 = *((char **)t2);
     t13 = *((unsigned char *)t6);
@@ -100,7 +100,7 @@ LAB5:    xsi_set_current_line(57, ng0);
     if (t14 != 0)
         goto LAB11;
 
-LAB13:    xsi_set_current_line(60, ng0);
+LAB13:    xsi_set_current_line(53, ng0);
     t1 = xsi_get_transient_memory(16U);
     memset(t1, 0, 16U);
     t2 = t1;
@@ -112,7 +112,7 @@ LAB13:    xsi_set_current_line(60, ng0);
     t9 = *((char **)t8);
     memcpy(t9, t1, 16U);
     xsi_driver_first_trans_fast_port(t5);
-    xsi_set_current_line(61, ng0);
+    xsi_set_current_line(54, ng0);
     t1 = (t0 + 868U);
     t2 = *((char **)t1);
     t1 = (t0 + 776U);
@@ -140,7 +140,7 @@ LAB8:    t2 = (t0 + 684U);
     t3 = t12;
     goto LAB10;
 
-LAB11:    xsi_set_current_line(58, ng0);
+LAB11:    xsi_set_current_line(51, ng0);
     t2 = (t0 + 1052U);
     t7 = *((char **)t2);
     t2 = (t0 + 776U);
@@ -149,7 +149,7 @@ LAB11:    xsi_set_current_line(58, ng0);
     t15 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t8, t2);
     t16 = (t15 - 0);
     t17 = (t16 * 1);
-    xsi_vhdl_check_range_of_index(0, 128, 1, t15);
+    xsi_vhdl_check_range_of_index(0, 255, 1, t15);
     t18 = (16U * t17);
     t19 = (0 + t18);
     t9 = (t7 + t19);

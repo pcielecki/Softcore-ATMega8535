@@ -1,3 +1,9 @@
+-- Autor:				Piotr Cielecki 
+-- Tytu³ projektu:	Mikrokontroler ATMega8535
+-- Termin zajêæ		Poniedzia³ek, 15.15
+-- Data: 				24. stycznia 2016
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -18,7 +24,7 @@ architecture CPU_a of CPU is
     Port ( operand1 : in  STD_LOGIC_VECTOR (7 downto 0);
            operand2 : in  STD_LOGIC_VECTOR (7 downto 0);
 			  result : out std_logic_vector(7 downto 0);
-           op_and, op_or, op_add, op_sub, op_eor : in std_logic;
+           op_and, op_or, op_add, op_sub, op_eor, op_mov : in std_logic;
 			  zero, carry : out std_logic
 		);
 	end component ALU;
@@ -46,7 +52,7 @@ architecture CPU_a of CPU is
 			  manipulate_PC : out std_logic;
            reg1 : out  STD_LOGIC_VECTOR (4 downto 0);
            reg2 : out  STD_LOGIC_VECTOR (4 downto 0);
-			  alu_decoder : out std_logic_vector(3 downto 0);
+			  alu_decoder : out std_logic_vector(4 downto 0);
 			  ALU_immediate:out std_logic_vector(7 downto 0);		
 			  relative_PC: out std_logic_vector(15 downto 0);
 			  branch_code : out std_logic_vector(4 downto 0);
@@ -58,11 +64,13 @@ architecture CPU_a of CPU is
 	end component instruction_decoder;
 	
 	component ALU_op_decoder is
-    Port ( coded_in : in  STD_LOGIC_VECTOR (3 downto 0);
+    Port ( coded_in : in  STD_LOGIC_VECTOR (4 downto 0);
            op_add : out  STD_LOGIC;
            op_sub : out  STD_LOGIC;
            op_and : out  STD_LOGIC;
-           op_or : out  STD_LOGIC
+           op_or : out  STD_LOGIC;
+			  op_eor : out STD_LOGIC;
+			  op_mov : out std_logic
 			  );
 	end component ALU_op_decoder;
 	
@@ -116,9 +124,29 @@ architecture CPU_a of CPU is
            Q : out  STD_LOGIC);
 	end component reg_1x1;
 	
+	component Stack_pointer_reg is
+	Generic(SP_address : std_logic_vector(15 downto 0));
+    Port ( rst : in  STD_LOGIC;
+           clk : in  STD_LOGIC;
+           Write_Enable : in  STD_LOGIC;
+           Data_bus : in  STD_LOGIC_VECTOR (7 downto 0);
+			  Address_bus : inout std_logic_vector(15 downto 0);
+			  SP_increment : in std_logic;
+			  SP_decrement : in std_logic
+			  );
+	end component Stack_pointer_reg;
+	
+	component volatile_memory is
+		Generic(MEM_BASEADDR : std_logic_vector(15 downto 0) := "000000000000000";
+					MEM_SIZE : integer range 0 to 255); 
+		Port ( clk : in  STD_LOGIC;
+           rst : in  STD_LOGIC;
+           Data_bus : inout  STD_LOGIC_VECTOR (7 downto 0);
+           Address_bus : inout  STD_LOGIC_VECTOR (15 downto 0);
+           Write_Enable : in  STD_LOGIC);
+	end component volatile_memory;
 
 	
-	signal prog_clk : std_logic;
 	signal write_PC : std_logic;
 	signal branch_code : std_logic_vector(4 downto 0);
 	signal relative_PC : std_logic_vector(15 downto 0);
@@ -127,8 +155,8 @@ architecture CPU_a of CPU is
 	signal immediate : std_logic_vector(7 downto 0);
 	signal Immediate_not_Reg : std_logic;
 	signal Enable_ALU : std_logic;
-	signal ALU_coded_in : std_logic_vector(3 downto 0);
-	signal ALU_add, ALU_sub, ALU_and, ALU_or, ALU_eor : std_logic;
+	signal ALU_coded_in : std_logic_vector(4 downto 0);
+	signal ALU_add, ALU_sub, ALU_and, ALU_or, ALU_eor, ALU_mov : std_logic;
 	signal ALU_zero, ALU_carry : std_logic;
 	signal s_SREG : std_logic_vector(7 downto 0);
 	signal Addr1_async : std_logic_vector(4 downto 0);
@@ -141,6 +169,7 @@ architecture CPU_a of CPU is
 	signal status		 : std_logic_vector(7 downto 0);
 	signal fetch_next_instr : std_logic;
 	signal buffered_instr : std_logic_vector(15 downto 0);
+
 	
 begin
 
@@ -168,7 +197,8 @@ begin
 													op_sub => ALU_sub,
 													op_or => ALU_or,
 													op_and => ALU_and,
-													op_eor => ALU_eor
+													op_eor => ALU_eor,
+													op_mov => ALU_mov
 													);
 
 
@@ -198,6 +228,7 @@ begin
 													op_add => ALU_add,
 													op_sub => ALU_sub,
 													op_eor => ALU_eor,
+													op_mov => ALU_mov,
 													zero => ALU_zero,
 													carry => ALU_carry
 													);
@@ -225,7 +256,8 @@ begin
 																	clk => CPU_Write_Enable, 
 																	D => "000000" & ALU_zero & ALU_carry, 
 																	Q => s_SREG);
-	
+																	
+
 	CPU_Address_bus <= (others => 'H');
 	CPU_Data_bus <= (others => 'H');
 	CPU_Write_Enable <= 'L';

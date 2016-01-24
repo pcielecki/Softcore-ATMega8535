@@ -1,4 +1,4 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb_isim_beh.exe -prj C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb_beh.prj work.MCU_tb 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb_isim_beh.exe" -prj "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb_beh.prj" "work.MCU_tb" 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
@@ -19,14 +19,14 @@ WARNING:HDLCompiler:957 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/io_po
 WARNING:HDLCompiler:957 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/io_port.vhd" Line 66: Case choice must be a locally static expression
 WARNING:HDLCompiler:957 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/io_port.vhd" Line 70: Case choice must be a locally static expression
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd" into library work
-WARNING:HDLCompiler:946 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd" Line 182: Actual for formal port not_enable is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd" Line 224: Actual for formal port d is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd" Line 207: Actual for formal port not_enable is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/CPU.vhd" Line 251: Actual for formal port d is neither a static name nor a globally static expression
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/AT8535.vhd" into library work
 Parsing VHDL file "C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 121208 KB
-Fuse CPU Usage: 529 ms
+Fuse Memory Usage: 120560 KB
+Fuse CPU Usage: 951 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package textio
@@ -48,11 +48,14 @@ Compiling architecture cpu_a of entity CPU [cpu_default]
 Compiling architecture progmem_a of entity progmem [progmem_default]
 Compiling architecture tsb_a of entity tri_state_buffer [tri_state_buffer_default]
 Compiling architecture iop_a of entity io_port [\io_port(('0','0','0','0','0','0...]
+Compiling architecture iop_a of entity io_port [\io_port(('0','0','0','0','0','0...]
+Compiling architecture iop_a of entity io_port [\io_port(('0','0','0','0','0','0...]
+Compiling architecture iop_a of entity io_port [\io_port(('0','0','0','0','0','0...]
 Compiling architecture at_a of entity AT8535 [at8535_default]
 Compiling architecture behavior of entity mcu_tb
 Time Resolution for simulation is 1ps.
-Waiting for 15 sub-compilation(s) to finish...
-Compiled 38 VHDL Units
+Waiting for 12 sub-compilation(s) to finish...
+Compiled 44 VHDL Units
 Built simulation executable C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb_isim_beh.exe
-Fuse Memory Usage: 145448 KB
-Fuse CPU Usage: 1263 ms
+Fuse Memory Usage: 145824 KB
+Fuse CPU Usage: 2402 ms

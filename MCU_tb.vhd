@@ -1,37 +1,9 @@
---------------------------------------------------------------------------------
--- Company: 
--- Engineer:
---
--- Create Date:   21:09:53 01/13/2016
--- Design Name:   
--- Module Name:   C:/Users/Piotr/workspace/vlsi/vlsi_mcu/VLSI_MCU/MCU_tb.vhd
--- Project Name:  vlsi_mcu
--- Target Device:  
--- Tool versions:  
--- Description:   
--- 
--- VHDL Test Bench Created by ISE for module: AT8535
--- 
--- Dependencies:
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
--- Notes: 
--- This testbench has been automatically generated using types std_logic and
--- std_logic_vector for the ports of the unit under test.  Xilinx recommends
--- that these types always be used for the top-level I/O of a design in order
--- to guarantee that the testbench will bind correctly to the post-implementation 
--- simulation model.
---------------------------------------------------------------------------------
+
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE std.textio.all;
 USE ieee.std_logic_textio.all;
- 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 USE ieee.numeric_std.ALL;
  
 ENTITY MCU_tb IS
@@ -39,13 +11,11 @@ END MCU_tb;
  
 ARCHITECTURE behavior OF MCU_tb IS 
  
-    -- Component Declaration for the Unit Under Test (UUT)
- 
-    COMPONENT AT8535
+     COMPONENT AT8535
     PORT(
          rst : IN  std_logic;
          clk : IN  std_logic;
-         port_A : INOUT  std_logic_vector(7 downto 0);
+         port_A, port_B, port_C, port_D : INOUT  std_logic_vector(7 downto 0);
          progmem_write : IN  std_logic;
          instruction_write : IN  std_logic_vector(15 downto 0)
         );
@@ -59,7 +29,7 @@ ARCHITECTURE behavior OF MCU_tb IS
    signal s_instruction : std_logic_vector(15 downto 0) := (others => '0');
 
 	--BiDirs
-   signal port_A : std_logic_vector(7 downto 0);
+   signal port_A, port_B, port_C, port_D : std_logic_vector(7 downto 0);
 
    -- Clock period definitions
    constant clk_period : time := 4 ns;
@@ -74,6 +44,9 @@ BEGIN
           rst => rst,
           clk => clk,
           port_A => port_A,
+			 port_B => port_B,
+			 port_C => port_C,
+			 port_D => port_D,
           progmem_write => progmem_write,
           instruction_write => s_instruction
         );
@@ -136,7 +109,7 @@ BEGIN
 		request_read := FALSE;
 		progmem_write <= '0';
 		rst <= '1';
-		wait for 150*clk_period;
+		wait for 200*clk_period;
 		assert FALSE severity FAILURE;
    end process;
 	

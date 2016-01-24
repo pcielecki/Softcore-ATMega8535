@@ -46,12 +46,12 @@ begin
 	ram : process(clk, rst) is
 	begin
 		if(rst = '0') then Address_bus <= (others => 'Z'); Data_bus <= (others => 'Z'); mem_array <= (others => "00000000");
-		Data_bus <= (others => 'Z'); Address_bus <= (others => 'Z');
+		
 		elsif(clk'event and clk = '1') then
 			if(Write_Enable = '1' and Address_bus >= MEM_BASEADDR and Address_bus < MEM_BASEADDR + MEM_SIZE) then
-				mem_array(	to_integer(	unsigned(Address_bus(4 downto 0)))	) <= Data_bus;
-			elsif(Address_bus >= MEM_BASEADDR and Address_bus >= MEM_BASEADDR + MEM_SIZE) then
-				Data_bus <= mem_array(	to_integer(	unsigned(Address_bus(4 downto 0))) );
+				mem_array(	to_integer(	unsigned(Address_bus - MEM_BASEADDR))	) <= Data_bus;
+			elsif(Address_bus >= MEM_BASEADDR and Address_bus < MEM_BASEADDR + MEM_SIZE) then
+				Data_bus <= mem_array(	to_integer(	unsigned(Address_bus - MEM_BASEADDR)) );
 			else Data_bus <= (others => 'Z');
 
 			end if;

@@ -1,21 +1,7 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    23:49:26 01/16/2016 
--- Design Name: 
--- Module Name:    io_port - iop_a 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- Autor:				Piotr Cielecki 
+-- Tytu³ projektu:	Mikrokontroler ATMega8535
+-- Termin zajêæ		Poniedzia³ek, 15.15
+-- Data: 				24. stycznia 2016
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

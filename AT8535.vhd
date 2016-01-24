@@ -1,22 +1,7 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    01:04:43 01/12/2016 
--- Design Name: 
--- Module Name:    AT8535 - at_A 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
+-- Autor:				Piotr Cielecki 
+-- Tytu³ projektu:	Mikrokontroler ATMega8535
+-- Termin zajêæ		Poniedzia³ek, 15.15
+-- Data: 				24. stycznia 2016
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_unsigned.all;
@@ -33,7 +18,7 @@ use ieee.std_logic_unsigned.all;
 entity AT8535 is
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
-           port_A : inout  STD_LOGIC_VECTOR (7 downto 0);
+           port_A, port_B, port_C, port_D : inout  STD_LOGIC_VECTOR (7 downto 0);
 			  progmem_write : in std_logic;
 			  instruction_write : in std_logic_vector(15 downto 0)
 			  );
@@ -76,16 +61,18 @@ architecture at_A of AT8535 is
 	signal Address_bus : std_logic_vector(15 downto 0);
 	signal Write_Enable : std_logic;
 	
+	constant PORT_A_MEM_OFFSET : std_logic_vector(15 downto 0) := "0000000000111001";
+	constant PORT_B_MEM_OFFSET : std_logic_vector(15 downto 0) := "0000000000110110";
+	constant PORT_C_MEM_OFFSET : std_logic_vector(15 downto 0) := "0000000000110011";
+	constant PORT_D_MEM_OFFSET : std_logic_vector(15 downto 0) := "0000000000110000";
 begin
 	
 	flash_programming : process(clk, rst) 
 	begin
 		if(clk'event and clk = '1' ) then
-			if(progmem_write = '1') then
-				--s_instruction <= instruction_write;
-			
+			if(progmem_write = '1') then			
 				s_PC_W <= s_PC_W + "0000000000000001";
-			else s_PC_W <= (others => '0'); --s_instruction <= (others => 'Z');
+			else s_PC_W <= (others => '0'); 
 			end if;
 		end if;
 	end process flash_programming;
@@ -109,11 +96,36 @@ begin
 									
 	flash : progmem port map(rst => rst, clk => clk, PC => s_PC, Instruction => s_instruction, progmem_write => progmem_write);
 
-	PORTA : io_port generic map("0000000000111001") port map(rst => rst,
+	io_PORT_A : io_port generic map(Base_address => PORT_A_MEM_OFFSET) 
+																	port map(						rst => rst,
 																										clk => clk,
 																										Address_bus => Address_bus,
 																										Data_bus => Data_bus,
 																										Write_Enable => Write_enable,
 																										io_pins => PORT_A);
+																										
+	io_PORT_B : io_port generic map(Base_address => PORT_B_MEM_OFFSET) 
+																	port map(						rst => rst,
+																										clk => clk,
+																										Address_bus => Address_bus,
+																										Data_bus => Data_bus,
+																										Write_Enable => Write_enable,
+																										io_pins => PORT_B);
+																										
+	io_PORT_C : io_port generic map(Base_address => PORT_C_MEM_OFFSET) 	
+																	port map(						rst => rst,
+																										clk => clk,
+																										Address_bus => Address_bus,
+																										Data_bus => Data_bus,
+																										Write_Enable => Write_enable,
+																										io_pins => PORT_C);
+																										
+	io_PORT_D : io_port generic map(Base_address => PORT_D_MEM_OFFSET)
+																	port map(						rst => rst,
+																										clk => clk,
+																										Address_bus => Address_bus,
+																										Data_bus => Data_bus,
+																										Write_Enable => Write_enable,
+																										io_pins => PORT_D);
 end at_A;
 

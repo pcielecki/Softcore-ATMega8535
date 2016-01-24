@@ -1,21 +1,7 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    14:06:52 01/16/2016 
--- Design Name: 
--- Module Name:    branch_decoder - bd_a7 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- Autor:				Piotr Cielecki 
+-- Tytu³ projektu:	Mikrokontroler ATMega8535
+-- Termin zajêæ		Poniedzia³ek, 15.15
+-- Data: 				24. stycznia 2016
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -49,10 +35,9 @@ begin
 	execute_jmp(1) <= write_PC;
 	
 	with branch_code select
-		execute_jmp(0) <= '1' 			when "11100",	--RJMP
-								SREG(1) 		when "00001",
-								not SREG(1)	when "01001",
-								'0'			when others;
+		execute_jmp(0) <= SREG(1) 		when "00001", -- BREQ
+								not SREG(1)	when "01001", -- BRNE
+								'1'			when others;  -- RJMP
 								
 end bd_a7;
 

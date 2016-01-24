@@ -1,21 +1,7 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    21:28:55 01/08/2016 
--- Design Name: 
--- Module Name:    progmem - progmem_a 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- Autor:				Piotr Cielecki 
+-- Tytu³ projektu:	Mikrokontroler ATMega8535
+-- Termin zajêæ		Poniedzia³ek, 15.15
+-- Data: 				24. stycznia 2016
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -38,17 +24,10 @@ entity progmem is
 end progmem;
 
 architecture progmem_a of progmem is
-	type mem is array(0 to 128) of std_logic_vector(15 downto 0) ;
+	type mem is array(0 to 255) of std_logic_vector(15 downto 0) ;
 	signal mem_array : mem := (others => (others => '1'));
 	
 begin
-	--mem_array(0) <= "1110101000001010";
-	--mem_array(1) <= "1110000000010111";
-	--mem_array(2) <= "1110000000110111";
-	--mem_array(3) <= "0000111100000001";
-	--mem_array(4) <= "1110000000010110";
-	--mem_array(5) <= "0111110000011100";
-
 	flash : process(clk, rst) is
 	begin
 		if(rst = '0') then instruction <= (others => 'Z'); end if;

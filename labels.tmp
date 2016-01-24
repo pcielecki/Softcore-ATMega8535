@@ -19,8 +19,10 @@
   <FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.map</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <main><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>11</LINE></main>
-  <petla><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>17</LINE></petla>
-  <petla_glowna><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>24</LINE></petla_glowna>
+  <init><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>66</LINE></init>
+  <main><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>10</LINE></main>
+  <skok><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>48</LINE></skok>
+  <juz_koniec><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>58</LINE></juz_koniec>
+  <petla><FILE>C:\Users\Piotr\workspace\vlsi\vlsi_mcu\VLSI_MCU\vlsi.asm</FILE><LINE>62</LINE></petla>
  </LABELS>
 </ASSEMBLER_INFO>
